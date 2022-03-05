@@ -1,0 +1,241 @@
+.header {
+  align-items: center;
+  background-color: var(--header-bg);
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  .logo {
+    align-items: center;
+    color: var(--light-color);
+    cursor: pointer;
+    display: flex;
+    font: bold 2.5rem var(--mono);
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--main-color);
+    }
+
+    svg {
+      fill: var(--main-color);
+      height: 3rem;
+      margin-inline-end: 1rem;
+      width: 3.4rem;
+    }
+  }
+
+  .hamburger {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+    line {
+      stroke: var(--main-color);
+      stroke-width: 10%;
+      stroke-linecap: round;
+      transition: stroke 0.3s ease-in-out;
+    }
+
+    & {
+      .top {
+        animation: top-off .5s;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        -o-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      .middle {
+        animation: middle-off .5s;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        -o-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      .bottom {
+        animation: bottom-off .5s;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        -o-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      &.active {
+        .top {
+          animation: top-on .5s;
+          -webkit-animation-fill-mode: forwards;
+          -moz-animation-fill-mode: forwards;
+          -o-animation-fill-mode: forwards;
+          -ms-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+        }
+
+        .middle {
+          animation: middle-on .5s;
+          -webkit-animation-fill-mode: forwards;
+          -moz-animation-fill-mode: forwards;
+          -o-animation-fill-mode: forwards;
+          -ms-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+        }
+
+        .bottom {
+          animation: bottom-on .5s;
+          -webkit-animation-fill-mode: forwards;
+          -moz-animation-fill-mode: forwards;
+          -o-animation-fill-mode: forwards;
+          -ms-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      @keyframes top-on {
+        from {
+            transform: rotate(0deg);
+        }
+      
+        to {
+            transform: translate(25%, 0%) rotate(45deg);
+        }
+      }
+      
+      @keyframes middle-on {
+        from {
+            transform: rotate(0deg);
+        }
+      
+        to {
+            transform: translate(-25%, 50%) rotate(-45deg);
+        }
+      }
+      
+      @keyframes bottom-on {
+        from {
+            transform: rotate(0deg);
+        }
+      
+        to {
+            transform: rotate(45deg) translate(16%, -76%);
+        }
+      }
+      
+      @keyframes top-off {
+        from {
+            transform: translate(25%, 0%) rotate(45deg);
+        }
+      
+        to {
+            transform: rotate(0deg);
+        }
+      }
+      
+      @keyframes middle-off {
+        from {
+            transform: translate(-25%, 50%) rotate(-45deg);
+        }
+      
+        to {
+            transform: rotate(0deg);
+        }
+      }
+      
+      @keyframes bottom-off {
+        from {
+            transform: rotate(45deg) translate(16%, -76%);
+        }
+      
+        to {
+            transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .menu {
+    background-color: var(--header-bg);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding: 2rem;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: right 0.3s ease-in-out;
+    width: 100%;
+    
+    &.active {
+      right: 0;
+    }
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .navList {
+    list-style: none;
+    margin: 2rem 0;
+
+    li {
+      margin: 1rem 0;
+
+      a {
+        color: var(--light-color);
+        font: bold 1.5rem var(--mono);
+        text-decoration: none;
+        position: relative;
+        width: fit-content;
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0px;
+          right: 0px;
+          height: 2px;
+          background-color: var(--main-color);
+          transform-origin: right bottom;
+          transform: scaleX(0);
+          transition: transform 0.5s ease 0s;
+        }
+
+        &:hover {
+          color: var(--main-color);
+
+          &:before {
+            transform-origin: left bottom;
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    .hamburger, .menu {
+      display: none;
+    }
+
+    .nav {
+      display: initial;
+
+      .navList {
+        display: flex;
+        justify-content: center;
+
+        li {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
