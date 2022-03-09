@@ -39,6 +39,7 @@ const Header = () => {
         </ul>
       </nav>
     </aside>
+    {isOpen && <button onClick={() => setIsOpen(!isOpen)} className={styles.menuBackdrop}></button>}
   </header>
   )
 }

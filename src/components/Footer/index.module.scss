@@ -1,0 +1,30 @@
+@import 'styles/variables.scss';
+
+.footer {
+  background-color: $footer-bg;
+  height: 7rem;
+  padding: 2rem;
+
+  .social {
+    display: flex;
+    justify-content: center;
+
+    a {
+      margin-inline: 0.5rem;
+
+      svg {
+        height: 3rem;
+        fill: $light-color;
+        transition: all 0.2s ease-in-out;
+        width: 3rem;
+      }
+
+      &:hover {
+        svg {
+          fill: $main-color;
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+}

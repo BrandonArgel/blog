@@ -1,15 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
-:root {
-  --header-bg: #000028;
-  --body-bg: #000;
-  --footer-bg: #000028;
-  --main-color: #16ffe2;
-  --color: #ccddff;
-  --light-color: #ccddff;
-  --red-color: #cc0000;
-  --mono: 'Roboto Mono', monospace;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+@import './variables.scss';
 
 * {
   box-sizing: border-box;
@@ -31,18 +21,28 @@ html {
     background-color: transparent;
   }
   
-  // &::-webkit-scrollbar-thumb {
-  //   background-color: var(--couleur-special-alpha);
-  // }
+  &::-webkit-scrollbar-thumb {
+    // Variable --main-color with opacity
+    background-color: rgba($main-color, 0.6);
+  }
   
-  // &::-webkit-scrollbar-thumb:hover {
-  //   background-color: var(--couleur-special);
-  // }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $main-color;
+  }
 
   body {
-    background-color: var(--body-bg);
-    color: var(--color);
-    font-family: var(--mono);
+    background-color: $body-bg;
+    color: $color;
+    font-family: $mono;
+  }
+
+  main {
+    min-height: calc(100vh - 13rem);
+    position: relative;
+
+    & > div {
+      padding: 2rem;
+    }
   }
 
   a {

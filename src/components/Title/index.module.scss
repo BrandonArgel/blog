@@ -1,0 +1,48 @@
+@import 'styles/variables.scss';
+
+$title-types: "h1" "h2" "h3" "h4" "h5" "h6";
+
+$title-sizes: (
+  "h1": (
+    "min": 3.75rem,
+    "max": 4.0rem,
+  ),
+  "h2": (
+    "min": 3.25rem,
+    "max": 3.5rem,
+  ),
+  "h3": (
+    "min": 2.75rem,
+    "max": 3.0rem,
+  ),
+  "h4": (
+    "min": 2.25rem,
+    "max": 2.5rem,
+  ),
+  "h5": (
+    "min": 1.75rem,
+    "max": 2.0rem,
+  ),
+  "h6": (
+    "min": 1.75rem,
+    "max": 1.75rem,
+  ),
+);
+
+// Cicle through all the title types
+@each $type in $title-types {
+  // Class name for each title type
+  .#{$type} {
+    // Get the sizes for each title type
+    $sizes: map-get($title-sizes, $type);
+
+    color: $main-color-secondary;
+    font: bold clamp(map-get($sizes, "min"), 7vw, map-get($sizes, "max")) $mono;
+    text-align: center;
+    margin-block: 2rem;
+
+    @if($type == "h1") {
+      margin-block-start: 1rem;
+    }
+  }
+}

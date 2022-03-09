@@ -1,10 +1,22 @@
+import { Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Header from "components/Header";
+import Home from 'pages/Home'
 
-function App() {
+import Layout from 'components/Layout';
+
+const App = () => {
   return (
-    <Header />
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Layout>
+      </Suspense>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
