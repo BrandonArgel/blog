@@ -5,18 +5,22 @@
   background: $header-bg;
   box-shadow: 0px 0px 10px $shadow-color;
   display: flex;
+  left: 0;
   height: 6rem;
   justify-content: space-between;
   padding: 0 1rem;
-  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 
-  .logo {
+  .logo a {
     align-items: center;
     color: $light-color;
     cursor: pointer;
     display: flex;
     font: bold 2.5rem $mono;
-    margin-inline-end: 2rem;
+    margin-inline-end: 1rem;
     transition: color 0.2s ease-in-out;
     white-space: nowrap;
 
@@ -73,7 +77,7 @@
         animation-fill-mode: forwards;
       }
 
-      &.active {
+      &.open {
         .top {
           animation: top-on .5s;
           -webkit-animation-fill-mode: forwards;
@@ -180,7 +184,7 @@
     width: 100%;
     z-index: 2;
     
-    &.active {
+    &.open {
       right: 0;
     }
   }

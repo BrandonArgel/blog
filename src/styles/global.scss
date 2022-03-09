@@ -36,15 +36,6 @@ html {
     font-family: $mono;
   }
 
-  main {
-    min-height: calc(100vh - 13rem);
-    position: relative;
-
-    & > div {
-      padding: 2rem;
-    }
-  }
-
   a {
     text-decoration: none;
   }

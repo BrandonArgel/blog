@@ -1,18 +1,31 @@
+import { Outlet } from 'react-router-dom';
+
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
+import styles from './index.module.scss';
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+        <main className={styles.main}>
+          <Outlet />  
+        </main>
       <Footer />
     </>
   );
 }
 
-export default Layout;
+const PostLayout: React.FC = ({ children }) => {
+  return (
+    <>
+      <Header />
+        <div className={styles.post}>
+          <Outlet />  
+        </div>
+    </>
+  );
+}
+
+export {Layout, PostLayout};

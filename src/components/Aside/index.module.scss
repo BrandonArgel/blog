@@ -1,0 +1,124 @@
+@import 'styles/variables.scss';
+
+.aside {
+  background-color: $aside-bg;
+  height: calc(100vh - 6rem);
+  left: 0;
+  min-width: 3.2rem;
+  overflow-x: hidden;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  top: 6rem;
+  width: 3.2rem;
+  z-index: 2;
+
+  .header {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;
+    grid-template-rows: 6rem;
+    height: 6rem;
+
+    .button {
+      background-color: $main-color-secondary;
+      border: none;
+      cursor: pointer;
+      height: 6rem;
+      transition: all 0.3s ease-in-out;
+      width: 3.2rem;
+  
+      &:hover {
+        background-color: $main-color;
+      }
+  
+      svg {
+        fill: $aside-bg;
+        height: 3.2rem;
+        width: 100%;
+      }
+    }
+  
+    a h2 {
+      align-items: center;
+      color: $color;
+      font: bold $fz-lg $mono;
+      display: flex;
+      height: 6rem;
+      line-height: $fz-lg;
+      justify-content: center;
+      margin: 0;
+      padding: 0.6rem;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &.open {
+    width: 25rem;
+
+    .header .button svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .topics {
+    a {
+      display: block;
+      height: 6rem;
+      transition: background-color 0.2s ease-in-out;
+      width: 100%;
+
+      &:hover {
+        background-color: $hover-bg;
+      }
+    }
+
+    .item {
+      border-left: 2px solid $main-color;
+      border-top: 1px solid $stroke-color;
+      display: block;
+      font: normal $fz-md $mono;
+      margin-left: 1.4rem;
+      min-height: 6rem;
+      padding: 0 0 0 1.6rem;
+      position: relative;
+      width: 100%;
+      
+      .number {
+        align-items: center;
+        background-color: $main-color;
+        border-radius: 50%;
+        color: $aside-bg;
+        display: flex;
+        height: 22px;
+        left: 0;
+        justify-content: center;
+        position: absolute;
+        transform: translate(-1.2rem, -1rem);
+        transition: all 0.3s ease-in-out;
+        top: 50%;
+        width: 22px;
+      }
+  
+      .name {
+        align-items: center;
+        color: $color;
+        display: flex;
+        height: 6rem;
+        line-height: 1.5rem;
+        padding: 1rem 2rem;
+      }
+    }
+
+  }
+}
+
+.asideBackdrop {
+  background-color: rgba(3, 9, 30,0.6);
+  border: none;
+  display: block;
+  left: 0;
+  height: calc(100vh - 6rem);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: 1;
+}

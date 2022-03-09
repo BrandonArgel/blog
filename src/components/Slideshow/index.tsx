@@ -5,10 +5,9 @@ import styles from './index.module.scss';
 interface SlideshowProps {
   children: React.ReactNode;
   speed?: number;
-  interval?: number;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500, interval = 5000 }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
   const slideshow = React.useRef<HTMLInputElement>(null) as React.MutableRefObject<HTMLInputElement>;
 
   const next = () => {
@@ -20,9 +19,9 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500, interval =
 			slideshow.current.style.transform = `translateX(-${widthSlide}px)`;
 			
       setTimeout(() => {
-				slideshow.current.appendChild(firstElement);
 				slideshow.current.style.transition = 'none';
 				slideshow.current.style.transform = `translateX(0)`;
+				slideshow.current.appendChild(firstElement);
 			}, speed);
 		}
 	}
@@ -31,9 +30,9 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500, interval =
 		if(slideshow.current.children.length > 0){
 			const index = slideshow.current.children.length - 1;
 			const ultimoElemento = slideshow.current.children[index];
-			slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild);
-			slideshow.current.style.transition = 'none';
       const widthSlide = ultimoElemento.clientWidth;
+			slideshow.current.style.transition = 'none';
+			slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild);
 			slideshow.current.style.transform = `translateX(-${widthSlide}px)`;
 		
 			setTimeout(() => {
