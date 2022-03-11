@@ -16,7 +16,7 @@
 
 	.logo a {
 		align-items: center;
-		color: $light-color;
+		color: $light-text-color;
 		cursor: pointer;
 		display: flex;
 		font: bold 2.5rem $mono;
@@ -220,7 +220,7 @@
 			margin: 1rem 0;
 
 			a {
-				color: $light-color;
+				color: $light-text-color;
 				font: bold $fz-lg $mono;
 				text-decoration: none;
 				position: relative;

@@ -60,7 +60,7 @@
 
 			h2 {
 				align-items: center;
-				color: $text-color;
+				color: $light-text-color;
 				font: bold $fz-lg $mono;
 				display: flex;
 				height: 6rem;
@@ -166,7 +166,7 @@
 			.name {
 				align-items: center;
 				border-top: 1px solid $stroke-color;
-				color: $text-color;
+				color: $light-text-color;
 				display: flex;
 				height: 6rem;
 				padding: 1rem 2rem;

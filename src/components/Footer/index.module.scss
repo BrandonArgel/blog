@@ -10,12 +10,12 @@
 		justify-content: center;
 
 		a {
-			margin-inline: 0.5rem;
+			margin-inline: 0.7rem;
 
 			svg {
 				border-radius: 50%;
 				height: 3rem;
-				fill: $light-color;
+				fill: $light-text-color;
 				transition: all 0.2s ease-in-out;
 				width: 3rem;
 			}

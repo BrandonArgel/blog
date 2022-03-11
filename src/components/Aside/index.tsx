@@ -76,7 +76,7 @@ const Aside: React.FC<AsideProps> = ({ module, topics }) => {
 		<>
 			<aside className={`${styles.aside} ${isOpen ? styles.open : ""}`}>
 				<header className={styles.header}>
-					<button className={styles.button} onClick={() => setIsOpen(!isOpen)}>
+					<button className={styles.button} onClick={() => setIsOpen(!isOpen)} aria-label={!isOpen ? "Expandir menú de temas" : "Contraer menú de temas"}>
 						<ArrowRight />
 					</button>
 					<Link to={module.url}>

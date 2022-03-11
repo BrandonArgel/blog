@@ -275,19 +275,19 @@ const Home = () => {
 							<li>
 								<strong className={styles.key}>Hazlo poco a poco:</strong> Comienza con pequeños
 								cambios, como cosas que normalmente no harías:
+								<ul className="blog__list--nester">
+									<li>Si eres tímido o introvertido, toma iniciativa e invita a tus amigos.</li>
+									<li>Cambia tu actitud ante las personas que te rodean y la vida.</li>
+									<li>Realiza actividades en las que necesites creatividad.</li>
+									<li>Hablarle a algún o alguna desconocid@ en la calle.</li>
+									<li>Hablarle a esa persona que tanto te gusta.</li>
+									<li>Experimenta cosas nuevas todos los días</li>
+									<li>Intenta superar tus miedos y temores.</li>
+									<li>Realiza actividades independientes.</li>
+									<li>Estudiar un nuevo idioma.</li>
+									<li>Aprende algo nuevo.</li>
+								</ul>
 							</li>
-							<ul className="blog__list--nester">
-								<li>Si eres tímido o introvertido, toma iniciativa e invita a tus amigos.</li>
-								<li>Cambia tu actitud ante las personas que te rodean y la vida.</li>
-								<li>Realiza actividades en las que necesites creatividad.</li>
-								<li>Hablarle a algún o alguna desconocid@ en la calle.</li>
-								<li>Hablarle a esa persona que tanto te gusta.</li>
-								<li>Experimenta cosas nuevas todos los días</li>
-								<li>Intenta superar tus miedos y temores.</li>
-								<li>Realiza actividades independientes.</li>
-								<li>Estudiar un nuevo idioma.</li>
-								<li>Aprende algo nuevo.</li>
-							</ul>
 							<li>
 								<strong className={styles.key}>Sé flexible:</strong> Mantente abierto a nuevas
 								actividades.

@@ -53,10 +53,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 				{children}
 			</div>
 			<div className={styles.controls}>
-				<button className={styles.prev} onClick={prev}>
+				<button className={styles.prev} onClick={prev} aria-label="Anterior">
 					<ArrowLeft />
 				</button>
-				<button className={styles.next} onClick={next}>
+				<button className={styles.next} onClick={next} aria-label="Siguiente">
 					<ArrowRight />
 				</button>
 			</div>
@@ -72,7 +72,7 @@ interface SlideProps {
 }
 
 const Slide = ({ children, img, title, link }: SlideProps) => {
-	const isTouch = "ontouchstart" in window;
+	const isTouch = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	const click = clickHandler(clickCallback, doubleClickCallback);
 	const navigate = useNavigate();
 
@@ -90,10 +90,10 @@ const Slide = ({ children, img, title, link }: SlideProps) => {
 
 	return (
 		<div className={styles.slide}>
-			<button className={styles.content} onClick={isTouch ? click : clickCallback}>
+			<button className={styles.content} onClick={isTouch ? click : clickCallback} aria-label="Ir al post">
 				<img src={img} alt={title} />
 				<div className={styles.description}>
-					<Title h={5}>{title}</Title>
+					<Title h={2}>{title}</Title>
 					<p>{children}</p>
 					<p className={styles.mobile}>
 						{isTouch ? "¡Doble Clic para seguir leyendo!" : "¡Clic para seguir leyendo!"}
