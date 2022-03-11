@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 4;
 
   .logo a {
     align-items: center;
@@ -42,8 +42,14 @@
     position: relative;
     z-index: 3;
 
+    &:hover {
+      line {
+        stroke: $main-color;
+      }
+    }
+
     line {
-      stroke: $main-color;
+      stroke: $main-text-color;
       stroke-width: 10%;
       stroke-linecap: round;
       transition: stroke 0.3s ease-in-out;
@@ -227,14 +233,14 @@
           left: 0px;
           right: 0px;
           height: 2px;
-          background-color: $main-color;
+          background-color: $main-text-color;
           transform-origin: right bottom;
           transform: scaleX(0);
           transition: transform 0.5s ease 0s;
         }
 
         &:hover {
-          color: $main-color;
+          color: $main-text-color;
 
           &:before {
             transform-origin: left bottom;

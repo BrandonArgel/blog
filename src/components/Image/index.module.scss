@@ -1,0 +1,78 @@
+$image-types: 'small' 'medium' 'large';
+$image-positions: 'left' 'right';
+
+$image-sizes: (
+  'small': (
+    'smartphone': 100%,
+    'tablet': 50%,
+    'desktop': 25%,
+  ),
+  'medium': (
+    'smartphone': 100%,
+    'tablet': 50%,
+    'desktop': 50%,
+  ),
+  'large': (
+    'smartphone': 100%,
+    'tablet': 100%,
+    'desktop': 100%,
+  ),
+);
+
+$image-sides: (
+  'left': (
+    'float': left,
+    'smartphone': 0 0 0 0,
+    'tablet': 0 1rem 0 0,
+    'desktop': 0 2rem 0 0,
+  ),
+  'right': (
+    'float': right,
+    'smartphone': 0 0 0 0,
+    'tablet': 0 0 0 1rem,
+    'desktop': 0 0 0 2rem,
+  )
+);
+
+@each $image-type in $image-types {
+  .#{$image-type} {
+    $devices: map-get($image-sizes, $image-type);
+
+    @media screen and (max-width: 767px) {
+      width: map-get($devices, 'smartphone');
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      width: map-get($devices, 'tablet');
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: map-get($devices, 'desktop');
+    }
+  }
+}
+
+@each $image-position in $image-positions {
+  .#{$image-position} {
+    $styles: map-get($image-sides, $image-position);
+
+    @media screen and (max-width: 767px) {
+      margin: map-get($styles, 'smartphone');
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      float: map-get($styles, 'float');
+      margin: map-get($styles, 'tablet');
+    }
+
+    @media screen and (min-width: 1024px) {
+      float: map-get($styles, 'float');
+      margin: map-get($styles, 'desktop');
+    }
+  }
+}
+
+.image {
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}

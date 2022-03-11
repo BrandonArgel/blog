@@ -1,5 +1,8 @@
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
+import Title from "components/Title";
 import { ArrowLeft, ArrowRight } from 'assets/icons/arrrows';
+import clickHandler from "utils/clickHandler"
 import styles from './index.module.scss';
 
 interface SlideshowProps {
@@ -61,12 +64,38 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 
 interface SlideProps {
   children: React.ReactNode;
+  img: string;
+  title: string;
+  link: string;
 }
 
-const Slide = ({ children }: SlideProps) => {
+const Slide = ({ children, img, title, link }: SlideProps) => {
+  const isTouch = 'ontouchstart' in window;
+  const click = clickHandler(clickCallback, doubleClickCallback);
+  const navigate = useNavigate();
+
+  function clickCallback() {
+    if(!isTouch){
+      navigate(link);
+    }
+  }
+
+  function doubleClickCallback() {
+    if(isTouch){
+      navigate(link);
+    }
+  }
+  
   return (
     <div className={styles.slide}>
-      {children}
+      <button className={styles.content} onClick={isTouch ? click : clickCallback}>
+        <img src={img} alt={title} />
+        <div className={styles.description}>
+          <Title h={5}>{title}</Title>
+          <p>{children}</p>
+          <p className={styles.mobile}>{isTouch ? "¡Doble Clic para seguir leyendo!" : "¡Clic para seguir leyendo!"}</p>
+        </div>
+      </button>
     </div>
   );
 }

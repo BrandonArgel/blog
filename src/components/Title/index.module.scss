@@ -36,13 +36,13 @@ $title-sizes: (
     // Get the sizes for each title type
     $sizes: map-get($title-sizes, $type);
 
-    color: $main-color-secondary;
+    color: $main-text-color;
     font: bold clamp(map-get($sizes, "min"), 7vw, map-get($sizes, "max")) $mono;
     text-align: center;
-    margin-block: 2rem;
+    padding-block: 2rem;
 
     @if($type == "h1") {
-      margin-block-start: 1rem;
+      padding-block-start: 1rem;
     }
   }
 }

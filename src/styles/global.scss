@@ -9,35 +9,43 @@
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
   overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    background-color: transparent;
-    width: 12px;
-  }
-  
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    // Variable --main-color with opacity
-    background-color: rgba($main-color, 0.6);
-  }
-  
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: $main-color;
-  }
 
   body {
     background-color: $body-bg;
-    color: $color;
+    color: $text-color;
     font-family: $mono;
-  }
 
-  a {
-    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
+
+    main {
+      max-height: calc(100vh - 6rem);
+    }
+
+    main, aside {
+      scroll-behavior: smooth;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 12px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        // Variable --main-color with opacity
+        background-color: rgba($main-color, 0.6);
+      }
+      
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: $main-color;
+      }
+    }
   }
 }
 

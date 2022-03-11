@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Header from 'components/Header';
@@ -18,6 +19,16 @@ const Layout: React.FC = ({ children }) => {
 }
 
 const PostLayout: React.FC = ({ children }) => {
+  React.useEffect(() => {
+		const Main = document.querySelector("main") as HTMLElement;
+		const Sections = Main.querySelectorAll("section") as NodeListOf<HTMLElement>;
+
+		// Add id i++ to each section
+		Array.from(Sections).forEach((section, i) => {
+			section.id = `${i + 1}`;
+		});
+	})
+
   return (
     <>
       <Header />

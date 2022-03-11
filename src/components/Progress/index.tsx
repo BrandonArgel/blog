@@ -6,21 +6,32 @@ const Progress = () => {
 
   // Progress bar of the element main
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
+    const main = document.querySelector('main') as HTMLElement;
+    main.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      main.removeEventListener("scroll", handleScroll);
     }
   }, []);
     
   const handleScroll = () => {
-    const main = document.querySelector("main") as HTMLElement | null;
+    const main = document.querySelector("main") as HTMLElement;
+    const footer = document.querySelector("footer") as HTMLElement;
     if (main) {
-      const MainOffset = main.offsetTop;
-      const MainHeight = main.clientHeight;
-      const ClientHeight = document.documentElement.clientHeight;
-      const ClientScroll = document.documentElement.scrollTop;
-      const progress = (ClientScroll - MainOffset) / (MainHeight - ClientHeight) * 100;
-      setValue(progress);
+      const scrollTop = main.scrollTop;
+      const scrollHeight = main.scrollHeight;
+      const clientHeight = main.clientHeight;
+      const footerHeight = footer.clientHeight;
+      const progress = (scrollTop / (scrollHeight - clientHeight - footerHeight)) * 100;
+      progress < 0 ? setValue(0) : progress > 100 ? setValue(100) : setValue(progress);
+
+      /* In case you need to calculate only the scroll in which an element is */
+      // const MainOffset = main.offsetTop;
+      // const MainHeight = main.clientHeight;
+      // const ClientHeight = document.documentElement.clientHeight;
+      // const ClientScroll = document.documentElement.scrollTop;
+      // const progress = (ClientScroll - MainOffset) / (MainHeight - ClientHeight) * 100;
+      // console.log({ MainOffset, MainHeight, ClientHeight, ClientScroll, progress });
+      // progress < 0 ? setValue(0) : progress > 100 ? setValue(100) : setValue(progress);
     }
   };
 

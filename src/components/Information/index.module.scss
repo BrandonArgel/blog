@@ -1,0 +1,29 @@
+@import 'styles/variables.scss';
+
+.info {
+  align-items: center;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: 1px solid $stroke-bloquote;
+  background-color: $body-bg;
+  box-shadow: -4px 0 0 $main-text-color;
+  display: flex;
+  font: oblique lighter $fz-md $mono;
+  left: 4px;
+  padding: 2rem;
+  position: relative;
+  margin: 0 0 2rem 0;
+  width: fit-content;
+
+  p {
+    padding: 0;
+  }
+
+  svg {
+    fill: $main-text-color;
+    height: 3rem;
+    margin-inline-end: 1rem;
+    min-width: 3rem;
+  }
+}

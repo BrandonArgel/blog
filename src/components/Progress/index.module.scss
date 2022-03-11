@@ -1,6 +1,8 @@
 @import 'styles/variables.scss';
 
 .progress {
+    background: none;
+    border: none;
     border-radius: 0px;
     display: flex;
     height: 5px;
@@ -10,14 +12,24 @@
     left: 0;
     vertical-align: 10px;
     width: 100%;
+    z-index: 1;
 
   &[value]::-webkit-progress-bar {
-      background-color: $body-bg;
+      background-color: transparent;
   }
 
   &::-webkit-progress-value {
-      background-color: $main-color !important;
+      background: $secondary-color;
       border-radius: 0px;
+  }
+
+  &::-moz-progress-bar {
+      background: $secondary-color;
+      border-radius: 0px;
+  }
+
+  &::-moz-progress-bar {
+    background: $secondary-color;
   }
 
   &::-webkit-progress-bar {
@@ -25,10 +37,6 @@
   }
 
   &::-webkit-progress-value {
-      border-radius: 0px;
-  }
-
-  &::-moz-progress-bar {
       border-radius: 0px;
   }
 }
