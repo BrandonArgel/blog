@@ -96,7 +96,7 @@ const Slide = ({ children, img, title, link }: SlideProps) => {
 					<Title h={2}>{title}</Title>
 					<p>{children}</p>
 					<p className={styles.mobile}>
-						{isTouch ? "¡Doble Clic para seguir leyendo!" : "¡Clic para seguir leyendo!"}
+						{isTouch ? "Toca dos veces para seguir leyendo!" : "¡Clic para seguir leyendo!"}
 					</p>
 				</div>
 			</button>

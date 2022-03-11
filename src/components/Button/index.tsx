@@ -1,24 +1,33 @@
 import styles from "./index.module.scss";
 
+type size = "small" | "medium" | "large";
+type type = "primary" | "secondary";
+
 interface ButtonProps {
 	children: React.ReactNode;
-	onClick?: () => void;
 	className?: string;
+	onClick?: () => void;
+	size?: size;
+	type?: type;
 }
 
 export default function Button(props: ButtonProps) {
-	const { children, ...rest } = props;
+	const { children, className = "", size = "large", type = "primary", ...rest } = props;
 	return (
-		<button className={styles.button} {...rest}>
+		<button className={`${styles[size]} ${styles[type]} ${className}`} {...rest}>
 			{children}
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			{type === "primary" && (
+				<>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</>
+			)}
 		</button>
 	);
 }

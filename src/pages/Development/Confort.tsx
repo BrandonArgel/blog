@@ -21,7 +21,7 @@ import styles from "../index.module.scss";
 
 const module = { name: "Desarrollo Personal", url: "/desarrollo-personal" };
 const topics = [
-	"¿Cómo salir de la zona de confort?",
+	"¿Qué es la zona de confort?",
 	"Dificultades al intentar salir de nuestra zona de confort",
 	"¿Es importante salir de nuestra zona de confort?",
 	"El orden y el caos",
@@ -39,7 +39,7 @@ const Home = () => {
 			<main className={styles.main}>
 				<article className={styles.article}>
 					<section>
-						<Title>¿Cómo salir de tu zona de confort?</Title>
+						<Title>¿Qué es la zona de confort?</Title>
 						<Image src={Banner} alt="Zona de confort" size="large" />
 						<p>
 							Para comenzar debemos de entender{" "}

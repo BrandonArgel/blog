@@ -1,180 +1,238 @@
 @import "styles/variables.scss";
 
-.button {
-	align-items: center;
-	background: none;
-	border: none;
-	color: $main-text-color;
-	cursor: pointer;
-	display: flex;
-	font: $fz-lg $mono;
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 2rem;
-	position: relative;
-	transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
-	width: fit-content;
+$button-types: "primary", "secondary";
 
-	span:nth-child(1) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background: linear-gradient(to right, transparent, $secondary-color);
-	}
-	span:nth-child(2) {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 2px;
-		height: 100%;
-		transform: translateY(-100%);
-		background: linear-gradient(to bottom, transparent, $secondary-color);
-	}
-	span:nth-child(3) {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background: linear-gradient(to left, transparent, $secondary-color);
-	}
-	span:nth-child(4) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 2px;
-		height: 100%;
-		transform: translateY(100%);
-		background: linear-gradient(to top, transparent, $secondary-color);
-	}
-	span:nth-child(5) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		transform: translateX(-100%);
-		background: linear-gradient(to right, transparent, $secondary-color);
-	}
-	span:nth-child(6) {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 2px;
-		height: 100%;
-		background: linear-gradient(to bottom, transparent, $secondary-color);
-	}
-	span:nth-child(7) {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		transform: translateX(100%);
-		background: linear-gradient(to left, transparent, $secondary-color);
-	}
-	span:nth-child(8) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 2px;
-		height: 100%;
-		background: linear-gradient(to top, transparent, $secondary-color);
-	}
-	&:hover,
-	&:active,
-	&:focus {
-		transform: scale(1.1);
-		span:nth-child(1) {
-			animation: animate1 2s linear infinite;
-		}
-		span:nth-child(2) {
-			animation: animate2 2s 1s linear infinite;
-		}
-		span:nth-child(3) {
-			animation: animate3 2s linear infinite;
-		}
-		span:nth-child(4) {
-			animation: animate4 2s 1s linear infinite;
-		}
-		span:nth-child(5) {
-			animation: animate5 2s 1s linear infinite;
-		}
-		span:nth-child(6) {
-			animation: animate6 2s linear infinite;
-		}
-		span:nth-child(7) {
-			animation: animate7 2s 1s linear infinite;
-		}
-		span:nth-child(8) {
-			animation: animate8 2s linear infinite;
-		}
+$button-colors: (
+	"primary": (
+		"background": none,
+		"color": $main-text-color,
+		"hover-background": none,
+		"hover-color": $main-color,
+	),
+	"secondary": (
+		"background": $secondary-color,
+		"color": $dark-text-color,
+		"hover-background": $main-color,
+		"hover-color": $dark-text-color,
+	),
+);
+
+$button-sizes: (
+	"large": (
+		"font": $fz-lg $mono,
+		"height": 5rem,
+		"padding-inline": 3rem,
+	),
+	"medium": (
+		"font": $fz-md $mono,
+		"height": 4.5rem,
+		"padding-inline": 2.5rem,
+	),
+	"small": (
+		"font": $fz-sm $mono,
+		"height": 4rem,
+		"padding-inline": 2rem,
+	),
+);
+
+@each $button-size, $size in $button-sizes {
+	.#{$button-size} {
+		font: normal map-get($size, "font");
+		height: map-get($size, "height");
+		padding-inline: map-get($size, "padding-inline");
 	}
 }
 
-@keyframes animate1 {
-	0% {
-		transform: translateX(-100%);
-	}
-	100% {
-		transform: translateX(100%);
-	}
-}
-@keyframes animate2 {
-	0% {
-		transform: translateY(-100%);
-	}
-	100% {
-		transform: translateY(100%);
-	}
-}
-@keyframes animate3 {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
-}
-@keyframes animate4 {
-	0% {
-		transform: translateY(100%);
-	}
-	100% {
-		transform: translateY(-100%);
-	}
-}
-@keyframes animate5 {
-	0% {
-		transform: translateX(-100%);
-	}
-	100% {
-		transform: translateX(100%);
-	}
-}
-@keyframes animate6 {
-	0% {
-		transform: translateY(-100%);
-	}
-	100% {
-		transform: translateY(100%);
-	}
-}
-@keyframes animate7 {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
-}
-@keyframes animate8 {
-	0% {
-		transform: translateY(100%);
-	}
-	100% {
-		transform: translateY(-100%);
+@each $button-type in $button-types {
+	.#{$button-type} {
+		$colors: map-get($button-colors, $button-type);
+
+		align-items: center;
+		background: map-get($colors, "background");
+		border: none;
+		color: map-get($colors, "color");
+		cursor: pointer;
+		display: flex;
+		margin: 0 auto;
+		transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+		width: fit-content;
+
+		&:hover {
+			transform: scale(1.03);
+		}
+		&:active {
+			transform: scale(1);
+			transition: all 0.1s;
+		}
+
+		@if $button-type!= "primary" {
+			border-radius: 3rem;
+		} @else {
+			overflow: hidden;
+			position: relative;
+
+			span:nth-child(1) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(to right, transparent, $secondary-color);
+			}
+			span:nth-child(2) {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 2px;
+				height: 100%;
+				transform: translateY(-100%);
+				background: linear-gradient(to bottom, transparent, $secondary-color);
+			}
+			span:nth-child(3) {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(to left, transparent, $secondary-color);
+			}
+			span:nth-child(4) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				transform: translateY(100%);
+				background: linear-gradient(to top, transparent, $secondary-color);
+			}
+			span:nth-child(5) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				transform: translateX(-100%);
+				background: linear-gradient(to right, transparent, $secondary-color);
+			}
+			span:nth-child(6) {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(to bottom, transparent, $secondary-color);
+			}
+			span:nth-child(7) {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				transform: translateX(100%);
+				background: linear-gradient(to left, transparent, $secondary-color);
+			}
+			span:nth-child(8) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(to top, transparent, $secondary-color);
+			}
+			&:hover,
+			&:active,
+			&:focus {
+				transform: scale(1.1);
+				span:nth-child(1) {
+					animation: animate1 2s linear infinite;
+				}
+				span:nth-child(2) {
+					animation: animate2 2s 1s linear infinite;
+				}
+				span:nth-child(3) {
+					animation: animate3 2s linear infinite;
+				}
+				span:nth-child(4) {
+					animation: animate4 2s 1s linear infinite;
+				}
+				span:nth-child(5) {
+					animation: animate5 2s 1s linear infinite;
+				}
+				span:nth-child(6) {
+					animation: animate6 2s linear infinite;
+				}
+				span:nth-child(7) {
+					animation: animate7 2s 1s linear infinite;
+				}
+				span:nth-child(8) {
+					animation: animate8 2s linear infinite;
+				}
+			}
+
+			@keyframes animate1 {
+				0% {
+					transform: translateX(-100%);
+				}
+				100% {
+					transform: translateX(100%);
+				}
+			}
+			@keyframes animate2 {
+				0% {
+					transform: translateY(-100%);
+				}
+				100% {
+					transform: translateY(100%);
+				}
+			}
+			@keyframes animate3 {
+				0% {
+					transform: translateX(100%);
+				}
+				100% {
+					transform: translateX(-100%);
+				}
+			}
+			@keyframes animate4 {
+				0% {
+					transform: translateY(100%);
+				}
+				100% {
+					transform: translateY(-100%);
+				}
+			}
+			@keyframes animate5 {
+				0% {
+					transform: translateX(-100%);
+				}
+				100% {
+					transform: translateX(100%);
+				}
+			}
+			@keyframes animate6 {
+				0% {
+					transform: translateY(-100%);
+				}
+				100% {
+					transform: translateY(100%);
+				}
+			}
+			@keyframes animate7 {
+				0% {
+					transform: translateX(100%);
+				}
+				100% {
+					transform: translateX(-100%);
+				}
+			}
+			@keyframes animate8 {
+				0% {
+					transform: translateY(100%);
+				}
+				100% {
+					transform: translateY(-100%);
+				}
+			}
+		}
 	}
 }
