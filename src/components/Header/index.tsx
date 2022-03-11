@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "assets/icons/logo.js";
+// import Logo from "assets/icons/logo.js";
 
 import NavItems from "utils/navigation";
 

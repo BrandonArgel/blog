@@ -1,42 +1,42 @@
-@import 'styles/variables.scss';
+@import "styles/variables.scss";
 
 .progress {
-    background: none;
-    border: none;
-    border-radius: 0px;
-    display: flex;
-    height: 5px;
-    line-height: 5px;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    vertical-align: 10px;
-    width: 100%;
-    z-index: 1;
+	background: none;
+	border: none;
+	border-radius: 0px;
+	display: flex;
+	height: 5px;
+	line-height: 5px;
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	vertical-align: 10px;
+	width: 100%;
+	z-index: 1;
 
-  &[value]::-webkit-progress-bar {
-      background-color: transparent;
-  }
+	&[value]::-webkit-progress-bar {
+		background-color: transparent;
+	}
 
-  &::-webkit-progress-value {
-      background: $secondary-color;
-      border-radius: 0px;
-  }
+	&::-webkit-progress-value {
+		background: $secondary-color;
+		border-radius: 0px;
+	}
 
-  &::-moz-progress-bar {
-      background: $secondary-color;
-      border-radius: 0px;
-  }
+	&::-moz-progress-bar {
+		background: $secondary-color;
+		border-radius: 0px;
+	}
 
-  &::-moz-progress-bar {
-    background: $secondary-color;
-  }
+	&::-moz-progress-bar {
+		background: $secondary-color;
+	}
 
-  &::-webkit-progress-bar {
-      border-radius: 0px;
-  }
+	&::-webkit-progress-bar {
+		border-radius: 0px;
+	}
 
-  &::-webkit-progress-value {
-      border-radius: 0px;
-  }
+	&::-webkit-progress-value {
+		border-radius: 0px;
+	}
 }

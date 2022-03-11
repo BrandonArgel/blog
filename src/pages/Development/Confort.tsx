@@ -1,6 +1,8 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Aside from "components/Aside";
+import Button from "components/Button";
 import Footer from "components/Footer";
 import Image from "components/Image";
 import Information from "components/Information";
@@ -25,10 +27,12 @@ const topics = [
 	"El orden y el caos",
 	"Conquista tu zona de confort",
 	"Rompe el patrón",
-	"Conclusión"
+	"Conclusión",
 ];
 
 const Home = () => {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<Aside module={module} topics={topics} />
@@ -65,11 +69,12 @@ const Home = () => {
 							Permanecer en nuestra zona de confort es señal de conformismo, ignorancia, falta de
 							confianza, miedo, falta de aspiraciones o por falta de ambiciones.
 						</p>
+						<p>
+							La zona de confort también es un espacio de calma donde podemos descansar y reponernos
+						</p>
 						<Information>
-							La zona de confort también es un espacio de calma donde podemos descansar y reponer
-							fuerzas, por lo que bajo algunas circunstancias coes mejor quedarnos en nuestra zona
-							de confort, como: Bajo mucho estrés, cuando te exiges demasiado, o simplemente si te
-							apetece quedarte en tu zona de confort.
+							Bajo circunstancias como: Mucho estrés, si te exiges demasiado, etc. Es mejor
+							quedarnos en nuestra zona de confort.
 						</Information>
 					</section>
 					<section>
@@ -300,11 +305,25 @@ const Home = () => {
 					</section>
 					<section>
 						<Title h={2}>Conclusión</Title>
-						<p>Salir de tu zona de confort es de las mejores cosas que te pueden pasar, le da más emoción a tu vida, aprendes nuevas cosas, nuevas experiencias, etc.</p>
-						<p>Una vez entiendes que tu miedo es mental y normal a todo lo desconocido, el miedo no es por la situación que te ocurrirá en el futuro, cambia tu marco mental, sólo necesitas poner un poco de tu parte para lograrlo.</p>
-						<p>Debes de tener un equilibrio entre tu <span className={styles.key}>orden</span> y tu <span className={styles.key}>caos</span> para salir de tu zona de confort.</p>
-						<p>Identifica si necesitas ordenar el caos de tu vida o si debes salir más de tu zona de comodidad.</p>
+						<p>
+							Salir de tu zona de confort es de las mejores cosas que te pueden pasar, le da más
+							emoción a tu vida, aprendes nuevas cosas, nuevas experiencias, etc.
+						</p>
+						<p>
+							Una vez entiendes que tu miedo es mental y normal a todo lo desconocido, el miedo no
+							es por la situación que te ocurrirá en el futuro, cambia tu marco mental, sólo
+							necesitas poner un poco de tu parte para lograrlo.
+						</p>
+						<p>
+							Debes de tener un equilibrio entre tu <span className={styles.key}>orden</span> y tu{" "}
+							<span className={styles.key}>caos</span> para salir de tu zona de confort.
+						</p>
+						<p>
+							Identifica si necesitas ordenar el caos de tu vida o si debes salir más de tu zona de
+							comodidad.
+						</p>
 					</section>
+					<Button onClick={() => navigate(module.url)}>Regresar</Button>
 				</article>
 				<Progress />
 				<Footer />

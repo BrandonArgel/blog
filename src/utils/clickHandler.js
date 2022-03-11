@@ -12,7 +12,7 @@ function useSingleAndDoubleClick(actionSimpleClick, actionDoubleClick, delay = 2
 		if (click === 2) actionDoubleClick();
 
 		return () => clearTimeout(timer);
-	}, [click]);
+	}, [actionDoubleClick, actionSimpleClick, click, delay]);
 
 	return () => setClick((prev) => prev + 1);
 }

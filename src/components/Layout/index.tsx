@@ -1,25 +1,25 @@
-import * as React from 'react';
-import { Outlet } from 'react-router-dom';
+import * as React from "react";
+import { Outlet } from "react-router-dom";
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Header from "components/Header";
+import Footer from "components/Footer";
 
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
 const Layout: React.FC = ({ children }) => {
-  return (
-    <>
-      <Header />
-        <main className={styles.main}>
-          <Outlet />  
-        </main>
-      <Footer />
-    </>
-  );
-}
+	return (
+		<>
+			<Header />
+			<main className={styles.main}>
+				<Outlet />
+			</main>
+			<Footer />
+		</>
+	);
+};
 
 const PostLayout: React.FC = ({ children }) => {
-  React.useEffect(() => {
+	React.useEffect(() => {
 		const Main = document.querySelector("main") as HTMLElement;
 		const Sections = Main.querySelectorAll("section") as NodeListOf<HTMLElement>;
 
@@ -27,16 +27,16 @@ const PostLayout: React.FC = ({ children }) => {
 		Array.from(Sections).forEach((section, i) => {
 			section.id = `${i + 1}`;
 		});
-	})
+	});
 
-  return (
-    <>
-      <Header />
-        <div className={styles.post}>
-          <Outlet />  
-        </div>
-    </>
-  );
-}
+	return (
+		<>
+			<Header />
+			<div className={styles.post}>
+				<Outlet />
+			</div>
+		</>
+	);
+};
 
-export {Layout, PostLayout};
+export { Layout, PostLayout };

@@ -1,197 +1,196 @@
-@import 'styles/variables.scss';
+@import "styles/variables.scss";
 
 .aside {
-  background-color: $aside-bg;
-  box-shadow: 0px 0px 10px $shadow-color;
-  height: calc(100vh - 6rem);
-  left: 0;
-  min-width: 3.2rem;
-  overflow-x: hidden;
-  position: fixed;
-  scrollbar-width: none;
-  transition: all 0.3s ease-in-out;
-  top: 6rem;
-  width: 3.2rem;
-  z-index: 3;
-  
-  &::-webkit-scrollbar {
-    display: none;
-  }
+	background-color: $aside-bg;
+	box-shadow: 0px 0px 10px $shadow-color;
+	height: calc(100vh - 6rem);
+	left: 0;
+	min-width: 3.2rem;
+	overflow-x: hidden;
+	position: fixed;
+	scrollbar-width: none;
+	transition: all 0.3s ease-in-out;
+	top: 6rem;
+	width: 3.2rem;
+	z-index: 3;
 
-  .header {
-    box-shadow: 0px 0px 10px $shadow-color;
-    display: grid;
-    grid-template-columns: 3.2rem 1fr;
-    grid-template-rows: 6rem;
-    height: 6rem;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
-    .button {
-      background-color: $secondary-color;
-      border: none;
-      cursor: pointer;
-      height: 6rem;
-      transition: all 0.3s ease-in-out;
-      width: 3.2rem;
-  
-      &:hover {
-        background-color: $main-color;
-      }
-  
-      svg {
-        fill: $aside-bg;
-        height: 3.2rem;
-        width: 100%;
-      }
-    }
-  
-    a {
-      background-color: $aside-bg;
+	.header {
+		box-shadow: 0px 0px 10px $shadow-color;
+		display: grid;
+		grid-template-columns: 3.2rem 1fr;
+		grid-template-rows: 6rem;
+		height: 6rem;
+		position: sticky;
+		top: 0;
+		z-index: 1;
 
-      &:hover {
-        background-color: $hover-bg;
+		.button {
+			background-color: $secondary-color;
+			border: none;
+			cursor: pointer;
+			height: 6rem;
+			transition: all 0.3s ease-in-out;
+			width: 3.2rem;
 
-        h2 {
-          color: $main-text-color;
-        }
-      }
+			&:hover {
+				background-color: $main-color;
+			}
 
-      h2 {
-        align-items: center;
-        color: $text-color;
-        font: bold $fz-lg $mono;
-        display: flex;
-        height: 6rem;
-        line-height: $fz-lg;
-        justify-content: center;
-        margin: 0;
-        padding: 0.6rem;
-  
-        p {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      }
-    }
-  }
+			svg {
+				fill: $aside-bg;
+				height: 3.2rem;
+				width: 100%;
+			}
+		}
 
-  &.open {
-    width: 25rem;
-    scrollbar-width: initial;
+		a {
+			background-color: $aside-bg;
 
-    &::-webkit-scrollbar {
-      display: initial;
-    }
+			&:hover {
+				background-color: $hover-bg;
 
-    .header .button svg {
-      transform: rotate(180deg);
-    }
-  }
+				h2 {
+					color: $main-text-color;
+				}
+			}
 
-  .topics {
-    a {
-      display: block;
-      height: 6rem;
-      transition: background-color 0.2s ease-in-out;
-      width: 100%;
+			h2 {
+				align-items: center;
+				color: $text-color;
+				font: bold $fz-lg $mono;
+				display: flex;
+				height: 6rem;
+				line-height: $fz-lg;
+				justify-content: center;
+				margin: 0;
+				padding: 0.6rem;
 
-      &:hover {
-        background-color: $hover-bg;
+				p {
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+				}
+			}
+		}
+	}
 
-        .number {
-          background-color: $main-text-color;
-        }
+	&.open {
+		width: 25rem;
+		scrollbar-width: initial;
 
-        .name {
-          color: $main-text-color;
-        }
-      }
+		&::-webkit-scrollbar {
+			display: initial;
+		}
 
-      &:last-child .item {
-        border-left-color: transparent;
+		.header .button svg {
+			transform: rotate(180deg);
+		}
+	}
 
-        &::before {
-          background-color: $stroke-color;
-          content: "";
-          position: absolute;
-          top: 0;
-          left: -2px;
-          height: 50%;
-          width: 2px;
-        }
+	.topics {
+		a {
+			display: block;
+			height: 6rem;
+			transition: background-color 0.2s ease-in-out;
+			width: 100%;
 
-        &.active::before {
-          background-color: $secondary-color;
-        }
-      }
-    }
+			&:hover {
+				background-color: $hover-bg;
 
-    .item {
-      border-left: 2px solid $stroke-color;
-      display: block;
-      font: normal $fz-md $mono;
-      margin-left: 1.4rem;
-      min-height: 6rem;
-      padding: 0 0 0 1.6rem;
-      position: relative;
+				.number {
+					background-color: $main-text-color;
+				}
 
-      &.active {
-        border-left: 2px solid $secondary-color;
+				.name {
+					color: $main-text-color;
+				}
+			}
 
-        .number {
-          background-color: $secondary-color;
-        }
-      }
-      
-      .number {
-        align-items: center;
-        background-color: $stroke-color;
-        border-radius: 50%;
-        color: $aside-bg;
-        display: flex;
-        height: 22px;
-        left: 0;
-        justify-content: center;
-        position: absolute;
-        transform: translate(-1.2rem, -1rem);
-        transition: all 0.3s ease-in-out;
-        top: 50%;
-        width: 22px;
-      }
-  
-      .name {
-        align-items: center;
-        border-top: 1px solid $stroke-color;
-        color: $text-color;
-        display: flex;
-        height: 6rem;
-        padding: 1rem 2rem;
-        transition: all 0.3s ease-in-out;
+			&:last-child .item {
+				border-left-color: transparent;
 
-        p {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      }
-    }
+				&::before {
+					background-color: $stroke-color;
+					content: "";
+					position: absolute;
+					top: 0;
+					left: -2px;
+					height: 50%;
+					width: 2px;
+				}
 
-  }
+				&.active::before {
+					background-color: $secondary-color;
+				}
+			}
+		}
+
+		.item {
+			border-left: 2px solid $stroke-color;
+			display: block;
+			font: normal $fz-md $mono;
+			margin-left: 1.4rem;
+			min-height: 6rem;
+			padding: 0 0 0 1.6rem;
+			position: relative;
+
+			&.active {
+				border-left: 2px solid $secondary-color;
+
+				.number {
+					background-color: $secondary-color;
+				}
+			}
+
+			.number {
+				align-items: center;
+				background-color: $stroke-color;
+				border-radius: 50%;
+				color: $aside-bg;
+				display: flex;
+				height: 22px;
+				left: 0;
+				justify-content: center;
+				position: absolute;
+				transform: translate(-1.2rem, -1rem);
+				transition: all 0.3s ease-in-out;
+				top: 50%;
+				width: 22px;
+			}
+
+			.name {
+				align-items: center;
+				border-top: 1px solid $stroke-color;
+				color: $text-color;
+				display: flex;
+				height: 6rem;
+				padding: 1rem 2rem;
+				transition: all 0.3s ease-in-out;
+
+				p {
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+				}
+			}
+		}
+	}
 }
 
 .asideBackdrop {
-  background-color: rgba(3, 9, 30,0.6);
-  border: none;
-  display: block;
-  left: 0;
-  height: calc(100vh - 6rem);
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  z-index: 2;
+	background-color: rgba(3, 9, 30, 0.6);
+	border: none;
+	display: block;
+	left: 0;
+	height: calc(100vh - 6rem);
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	z-index: 2;
 }
