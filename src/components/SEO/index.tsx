@@ -8,7 +8,6 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, image, children }) => {
-  console.log({ title, description, image });
   return (
     <Helmet>
       <title>{title}</title>
