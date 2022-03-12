@@ -8,6 +8,7 @@ import Image from "components/Image";
 import Information from "components/Information";
 import Progress from "components/Progress";
 import Title from "components/Title";
+import SEO from "components/SEO";
 
 import Banner from "assets/images/confort/banner.jpg";
 import Unknown from "assets/images/confort/unknown.jpg";
@@ -35,6 +36,14 @@ const Home = () => {
 
 	return (
 		<>
+			<SEO
+				title="Cómo salir de nuestra zona de confort Desarrollo Personal"
+				description="La zona de confort o zona de comodidad nos sitúa en una burbuja que nos protege de lo
+					desconocido e inusual. Y sigues haciéndolo por miedo a perder tu estabilidad. La zona de
+					confort a simple vista puede parecer inofensiva, pero no todo es bueno. Dentro de la zona
+					de confort también hay cosas negativas que no nos gustan..."
+				image={Banner}
+			/>
 			<Aside module={module} topics={topics} />
 			<main className={styles.main}>
 				<article className={styles.article}>
@@ -44,8 +53,8 @@ const Home = () => {
 						<p>
 							Para comenzar debemos de entender{" "}
 							<span className={styles.key}>¿Qué es la zona de confort?</span> también conocida como{" "}
-							<span className={styles.key}>zona de comodidad</span> y algunos puntos{styles.key}s.
-							Si no sabemos qué es la zona de confort, no sabremos cómo salir de ella.
+							<span className={styles.key}>zona de comodidad</span> y algunos puntos. Si no sabemos
+							qué es la zona de confort, no sabremos cómo salir de ella.
 						</p>
 						<blockquote>
 							La zona de confort es un estado mental donde nos encontramos cómodos con nuestra vida
