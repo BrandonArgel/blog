@@ -2,7 +2,7 @@ import * as React from "react";
 
 import styles from "./index.module.scss";
 
-type Size = "small" | "medium" | "large";
+type Size = "super-small" | "small" | "medium" | "large";
 type Side = "left" | "right";
 
 type ImageProps = {

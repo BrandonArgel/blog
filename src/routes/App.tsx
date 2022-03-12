@@ -7,6 +7,7 @@ import Loader from "components/loader";
 const Home = React.lazy(() => import("pages/index"));
 const Development = React.lazy(() => import("pages/Development"));
 const Confort = React.lazy(() => import("pages/Development/Confort"));
+const Passion = React.lazy(() => import("pages/Development/Passion"));
 
 const App = () => {
 	return (
@@ -19,6 +20,7 @@ const App = () => {
 					</Route>
 					<Route path="/desarrollo-personal" element={<PostLayout />}>
 						<Route path="como-salir-de-tu-zona-de-confort" element={<Confort />} />
+						<Route path="como-encontrar-la-pasion-de-tu-vida" element={<Passion />} />
 					</Route>
 				</Routes>
 			</React.Suspense>

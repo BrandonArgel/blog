@@ -1,11 +1,16 @@
-$image-types: "small" "medium" "large";
+$image-types: "super-small" "small" "medium" "large";
 $image-positions: "left" "right";
 
 $image-sizes: (
+	"super-small": (
+		"smartphone": 100%,
+		"tablet": 33%,
+		"desktop": 25%,
+	),
 	"small": (
 		"smartphone": 100%,
 		"tablet": 50%,
-		"desktop": 25%,
+		"desktop": 33%,
 	),
 	"medium": (
 		"smartphone": 100%,

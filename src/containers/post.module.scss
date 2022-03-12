@@ -36,12 +36,12 @@ main {
 				padding-bottom: 2rem;
 			}
 
-			.key {
+			strong {
 				color: $main-text-color;
 				font: $fz-md $mono;
 			}
 
-			.trivial {
+			span {
 				color: $red-color;
 				font: $fz-md $mono;
 			}
@@ -77,13 +77,16 @@ main {
 
 				li {
 					margin-bottom: 1rem;
+
+					p {
+						margin-top: 1rem;
+					}
 				}
 			}
 
 			ul li::marker,
 			ol li::marker {
 				color: $main-text-color;
-				font-weight: bold;
 			}
 
 			ol {
@@ -97,6 +100,37 @@ main {
 			ol ul {
 				margin: 1rem 0 0 1.5rem;
 			}
+
+			a {
+				background-image: linear-gradient(
+					to left,
+					red,
+					orange,
+					yellow,
+					green,
+					cyan,
+					blue,
+					violet,
+					purple,
+					red,
+					orange,
+					yellow
+				);
+				color: transparent;
+				background-clip: text;
+				background-size: 500%;
+				animation: color 5s linear infinite;
+			}
 		}
+	}
+}
+
+@keyframes color {
+	from {
+		background-position: 0% 50%;
+	}
+
+	to {
+		background-position: 100% 50%;
 	}
 }

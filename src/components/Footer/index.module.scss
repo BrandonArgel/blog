@@ -2,16 +2,16 @@
 
 .footer {
 	background-color: $footer-bg;
-	height: 7rem;
 	padding: 2rem;
 
 	.social {
 		display: flex;
-		justify-content: center;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		margin: 0 auto;
+		max-width: 30rem;
 
 		a {
-			margin-inline: 0.7rem;
-
 			svg {
 				border-radius: 50%;
 				height: 3rem;

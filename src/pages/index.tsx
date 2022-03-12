@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { Slideshow, Slide } from "components/Slideshow";
+import SEO from "components/SEO";
 import Title from "components/Title";
 
 import Confort from "assets/images/confort/banner.webp";
@@ -8,6 +9,8 @@ import Passion from "assets/images/passion/banner.webp";
 import Motivation from "assets/images/motivation/banner.webp";
 
 const Home = () => {
+	SEO({ title: "Home", description:"Descubre interesantes temas sobre desarrollo personal, salud y tecnología", image: "https://blog.brandonargel.me/og.png" });
+
 	return (
 		<>
 			<Title>Desarrollo personal</Title>
@@ -26,7 +29,7 @@ const Home = () => {
 				<Slide
 					img={Passion}
 					title="¿Cómo encontrar la pasión de tu vida?"
-					link="/desarrollo-personal/como-salir-de-tu-zona-de-confort"
+					link="/desarrollo-personal/como-encontrar-la-pasion-de-tu-vida"
 				>
 					La pasión es una de las emociones más intensas que podemos sentir en nuetras vidas, ella
 					constituye el alma de nuestro propio éxito, eso que nos motiva a hacer algo, la pasión

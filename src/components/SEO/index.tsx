@@ -1,30 +1,19 @@
-import { Helmet } from "react-helmet";
+import * as React from "react";
 
-interface SEOProps {
-  title: string;
-  description: string;
-  image: string;
-  children?: React.ReactNode;
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, image, children }) => {
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta property="og:title" content={title} />
-      <meta name="twitter:title" content={title} />
-      <meta name="description" content={description} />
-      <meta property="og:description" content={description} />
-      <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:card"
-        content="summary_large_image"
-      />
-      <meta name="image" content={image} />
-      <meta property="og:image" content={image} />
-      <meta name="twitter:image" content={image} />
-    </Helmet>
-  )
-}
+const SEO = ({ title, description, image }: Props) => {
+	React.useEffect(() => {
+		document.title = title;
+		document.querySelector('meta[name="description"]')!.setAttribute("content", description);
+		if (image) {
+			document.querySelector('meta[name="image"]')!.setAttribute("content", image);
+		}
+	});
+};
 
 export default SEO;

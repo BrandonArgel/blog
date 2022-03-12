@@ -16,7 +16,7 @@ import Resilience from "assets/images/confort/resilience.webp";
 import FirstStep from "assets/images/confort/firststep.webp";
 import ConfortZone from "assets/images/confort/confortzone.webp";
 
-import "containers/index.module.scss";
+import "containers/post.module.scss";
 
 interface Props {
   url: string;
@@ -42,8 +42,8 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						<Image src={Banner} alt="Zona de confort" size="large" />
 						<p>
 							Para comenzar debemos de entender{" "}
-							<span className="key">¿Qué es la zona de confort?</span> también conocida como{" "}
-							<span className="key">zona de comodidad</span> y algunos puntos. Si no sabemos
+							<strong>¿Qué es la zona de confort?</strong> también conocida como{" "}
+							<strong>zona de comodidad</strong> y algunos puntos importantes. Si no sabemos
 							qué es la zona de confort, no sabremos cómo salir de ella.
 						</p>
 						<blockquote>
@@ -64,6 +64,10 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 							Dentro de la zona de confort también hay cosas negativas que no nos gustan (una
 							relación de pareja, un trabajo, malas hábitos adquiridos, etc.)
 						</p>
+						<Information>
+							Bajo circunstancias como: Mucho estrés, si te exiges demasiado, etc. Es mejor
+							quedarnos en nuestra zona de confort.
+						</Information>
 						<p>
 							Permanecer en nuestra zona de confort es señal de conformismo, ignorancia, falta de
 							confianza, miedo, falta de aspiraciones o por falta de ambiciones.
@@ -71,10 +75,6 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						<p>
 							La zona de confort también es un espacio de calma donde podemos descansar y reponernos
 						</p>
-						<Information>
-							Bajo circunstancias como: Mucho estrés, si te exiges demasiado, etc. Es mejor
-							quedarnos en nuestra zona de confort.
-						</Information>
 					</section>
 					<section>
 						<Title h={2}>Dificultades al intentar salir de nuestra zona de confort</Title>
@@ -84,7 +84,7 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						</p>
 						<Image src={Unknown} alt="Miedo a lo desconocido" size="medium" side="right" />
 						<p>
-							<span className="trivial">El miedo a lo desconocido:</span> Nuestro cerebro
+							<span>El miedo a lo desconocido:</span> Nuestro cerebro
 							está programado para sobrevivir y se podría decir que hoy en día esta desactualizado,
 							hasta el día de hoy todavía seguimos con muchas características que tenían nuestros
 							cerebros hace miles de años. Una de esas características es el miedo a lo desconocido,
@@ -93,7 +93,7 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						</p>
 						<Image src={LowResistance} alt="Miedo a lo desconocido" size="medium" side="right" />
 						<p>
-							<span className="trivial">El camino de menor resistencia:</span> Este punto no
+							<span>El camino de menor resistencia:</span> Este punto no
 							es de historia, mas bien es de evolución, los humanos se han ido adaptando para
 							siempre tomar el camino de menor resistencia, hacer lo más fácil, lo que exija mejos
 							esfuerzo.
@@ -107,7 +107,7 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						</p>
 						<ul>
 							<li>
-								<strong className="key">
+								<strong>
 									Permite desarrollar nuevas habilidades, amistades y ponerse a prueba.{" "}
 								</strong>
 								Salir de nuestra zona de confort también es un reto, que si logramos superar también
@@ -115,23 +115,23 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 								otras cosas.
 							</li>
 							<li>
-								<strong className="key">
+								<strong>
 									Ayuda a prepararte frente a las dificultades.{" "}
 								</strong>
 								Aprendemos miles de herramientas para hacer frente a imprevistos que surjan.
 							</li>
 							<li>
-								<strong className="key">Aumenta la seguridad en nosotros mismos. </strong>
+								<strong>Aumenta la seguridad en nosotros mismos. </strong>
 								Cuando uno se enfrenta a un reto y lo supera cree un poco más en sí mismo, adquiere
 								valentía y seguridad para dar el siguiente paso e ir creciendo.
 							</li>
 							<li>
-								<strong className="key">Estimula nuestro afán de superación. </strong>
+								<strong>Estimula nuestro afán de superación. </strong>
 								Cuando conseguimos salir y ampliar nuestra zona de confort la satisfacción personal
 								es muy grande y eso nos hace ir a más y crecer como personas.
 							</li>
 							<li>
-								<strong className="key">Fomenta el crecimiento personal. </strong>
+								<strong>Fomenta el crecimiento personal. </strong>
 								Cuando nos damos cuenta de que somos capaces de lograr lo que nos daba miedo,
 								resulta una aportación muy valiosa a nuestra personalidad. La carga de experiencias
 								nos acompaña en nuestro camino para explorar más allá de nuestra nueva zona de
@@ -155,7 +155,7 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						</p>
 						<ul>
 							<li>
-								<strong className="key">
+								<strong>
 									Permite desarrollar nuevas habilidades, amistades y ponerse a prueba.{" "}
 								</strong>
 								Salir de nuestra zona de confort también es un reto, que si logramos superar también
@@ -163,23 +163,23 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 								otras cosas.
 							</li>
 							<li>
-								<strong className="key">
+								<strong>
 									Ayuda a prepararte frente a las dificultades.{" "}
 								</strong>
 								Aprendemos miles de herramientas para hacer frente a imprevistos que surjan.
 							</li>
 							<li>
-								<strong className="key">Aumenta la seguridad en nosotros mismos. </strong>
+								<strong>Aumenta la seguridad en nosotros mismos. </strong>
 								Cuando uno se enfrenta a un reto y lo supera cree un poco más en sí mismo, adquiere
 								valentía y seguridad para dar el siguiente paso e ir creciendo.
 							</li>
 							<li>
-								<strong className="key">Estimula nuestro afán de superación. </strong>
+								<strong>Estimula nuestro afán de superación. </strong>
 								Cuando conseguimos salir y ampliar nuestra zona de confort la satisfacción personal
 								es muy grande y eso nos hace ir a más y crecer como personas.
 							</li>
 							<li>
-								<strong className="key">Fomenta el crecimiento personal. </strong>
+								<strong>Fomenta el crecimiento personal. </strong>
 								Cuando nos damos cuenta de que somos capaces de lograr lo que nos daba miedo,
 								resulta una aportación muy valiosa a nuestra personalidad. La carga de experiencias
 								nos acompaña en nuestro camino para explorar más allá de nuestra nueva zona de
@@ -190,13 +190,13 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 					<section>
 						<Title h={2}>El orden y el caos</Title>
 						<p>
-							El profesor <span className="key">Jordan Peterson</span> habla mucho sobre el
+							El profesor <strong>Jordan Peterson</strong> habla mucho sobre el
 							orden y el caos. Dice que el orden y el caos conviven, el humano para alcanzar sus
 							objetivos debe de tener un pie en el orden. Pero ¿A qué se refiere con el orden y el
 							caos?
 						</p>
 						<p>
-							<span className="key">El orden:</span> Son tus rutinas, tus hábitos, tu día a
+							<strong>El orden:</strong> Son tus rutinas, tus hábitos, tu día a
 							día, lo que te mueve hacia adelante, es la sistematización de procesos, todo lo
 							conocido, es esperar lo mismo cada día, todo esto crea diferentes rutinas que al final
 							te crearán diferentes procesos que al final te crearán los mismos resultados que
@@ -204,7 +204,7 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						</p>
 						<p>Pero también debes de tener otro pie en el caos, y ¿Qué es el caos?</p>
 						<p>
-							<span className="key">El caos:</span> El caos es todo lo desconocido, el caos
+							<strong>El caos:</strong> El caos es todo lo desconocido, el caos
 							es lo nuevo, es el cambio, es todo aquello que nos produce cierto miedo e
 							inestabilidad.
 						</p>
@@ -257,8 +257,8 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 							la pones en práctica, haz algo que aunque parezca fácil, nunca hayas hecho, solo falta
 							una pequeña rotura en el patrón para empezar a desencadenar una serie de eventos, y te
 							darás cuenta que salir de tu zona de confort es fascinante, pero todo depende de ti,{" "}
-							<span className="key">¿Necesitas más caos en tu vida?</span> o{" "}
-							<span className="key">¿Necesitas más orden?</span>
+							<strong>¿Necesitas más caos en tu vida?</strong> o{" "}
+							<strong>¿Necesitas más orden?</strong>
 						</p>
 						<p>
 							Esta es tu llamada a la acción, para salir de la zona de confort no hace falta
@@ -268,13 +268,13 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 						</p>
 						<ol>
 							<li>
-								<strong className="key">No te quedes cómodo:</strong> No hagas tu rutina
+								<strong>No te quedes cómodo:</strong> No hagas tu rutina
 								diaria.
 							</li>
 							<li>
-								<strong className="key">Hazlo poco a poco:</strong> Comienza con pequeños
+								<strong>Hazlo poco a poco:</strong> Comienza con pequeños
 								cambios, como cosas que normalmente no harías:
-								<ul className="blog__list--nester">
+								<ul>
 									<li>Si eres tímido o introvertido, toma iniciativa e invita a tus amigos.</li>
 									<li>Cambia tu actitud ante las personas que te rodean y la vida.</li>
 									<li>Realiza actividades en las que necesites creatividad.</li>
@@ -288,15 +288,15 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 								</ul>
 							</li>
 							<li>
-								<strong className="key">Sé flexible:</strong> Mantente abierto a nuevas
+								<strong>Sé flexible:</strong> Mantente abierto a nuevas
 								actividades.
 							</li>
 							<li>
-								<strong className="key">Desafíate a ti mismo: </strong>
+								<strong>Desafíate a ti mismo: </strong>
 								Nadie ha alcanzado sus sueños haciendo lo mismo toda su vida.
 							</li>
 							<li>
-								<strong className="key">Abre tu mente:</strong> Puedes ponerte creativo y
+								<strong>Abre tu mente:</strong> Puedes ponerte creativo y
 								animarte a hacer cosas nuevas.
 							</li>
 						</ol>
@@ -314,8 +314,8 @@ const ConfortPost: React.FC<Props> = ({ url }) => {
 							necesitas poner un poco de tu parte para lograrlo.
 						</p>
 						<p>
-							Debes de tener un equilibrio entre tu <span className="key">orden</span> y tu{" "}
-							<span className="key">caos</span> para salir de tu zona de confort.
+							Debes de tener un equilibrio entre tu <strong>orden</strong> y tu{" "}
+							<strong>caos</strong> para salir de tu zona de confort.
 						</p>
 						<p>
 							Identifica si necesitas ordenar el caos de tu vida o si debes salir más de tu zona de
