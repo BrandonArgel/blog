@@ -3,9 +3,9 @@ import * as React from "react";
 import { Slideshow, Slide } from "components/Slideshow";
 import Title from "components/Title";
 
-import Confort from "assets/images/confort/banner.jpg";
-import Passion from "assets/images/passion/banner.jpg";
-import Motivation from "assets/images/motivation/banner.jpg";
+import Confort from "assets/images/confort/banner.webp";
+import Passion from "assets/images/passion/banner.webp";
+import Motivation from "assets/images/motivation/banner.webp";
 
 const Home = () => {
 	return (

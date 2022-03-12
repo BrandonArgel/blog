@@ -18,6 +18,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, size = "large", side }) => {
 			className={`${styles.image} ${styles[size]} ${side ? styles[side] : ""}`}
 			src={src}
 			alt={alt}
+			loading="lazy"
 		/>
 	);
 };

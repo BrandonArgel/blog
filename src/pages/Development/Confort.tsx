@@ -10,13 +10,13 @@ import Progress from "components/Progress";
 import Title from "components/Title";
 import SEO from "components/SEO";
 
-import Banner from "assets/images/confort/banner.jpg";
-import Unknown from "assets/images/confort/unknown.jpg";
-import LowResistance from "assets/images/confort/lowresistance.jpg";
-import OutOfConfort from "assets/images/confort/outofconfort.jpg";
-import Resilience from "assets/images/confort/resilience.jpg";
-import FirstStep from "assets/images/confort/firststep.jpg";
-import ConfortZone from "assets/images/confort/confortzone.jpg";
+import Banner from "assets/images/confort/banner.webp";
+import Unknown from "assets/images/confort/unknown.webp";
+import LowResistance from "assets/images/confort/lowresistance.webp";
+import OutOfConfort from "assets/images/confort/outofconfort.webp";
+import Resilience from "assets/images/confort/resilience.webp";
+import FirstStep from "assets/images/confort/firststep.webp";
+import ConfortZone from "assets/images/confort/confortzone.webp";
 
 import styles from "../index.module.scss";
 

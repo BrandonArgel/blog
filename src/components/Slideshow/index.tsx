@@ -91,7 +91,7 @@ const Slide = ({ children, img, title, link }: SlideProps) => {
 	return (
 		<div className={styles.slide}>
 			<button className={styles.content} onClick={isTouch ? click : clickCallback} aria-label="Ir al post">
-				<img src={img} alt={title} />
+				<img src={img} alt={title} loading="lazy" />
 				<div className={styles.description}>
 					<Title h={2}>{title}</Title>
 					<p>{children}</p>
