@@ -37,7 +37,7 @@ const Home = () => {
 	return (
 		<>
 			<SEO
-				title="Cómo salir de nuestra zona de confort Desarrollo Personal"
+				title="¿Cómo salir de nuestra zona de confort? | Desarrollo Personal"
 				description="La zona de confort o zona de comodidad nos sitúa en una burbuja que nos protege de lo
 					desconocido e inusual. Y sigues haciéndolo por miedo a perder tu estabilidad. La zona de
 					confort a simple vista puede parecer inofensiva, pero no todo es bueno. Dentro de la zona
