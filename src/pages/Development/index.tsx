@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { Slideshow, Slide } from "components/Slideshow";
 import Title from "components/Title";
 import SEO from "components/SEO";
@@ -11,9 +9,12 @@ import Image from "components/Image";
 import Passion from "assets/images/passion/banner.webp";
 import Motivation from "assets/images/motivation/banner.webp";
 
-import "containers/home.module.scss";
+interface Props {
+	route: string;
+}
 
-const Home = () => {
+const Home: React.FC<Props> = ({ route }) => {
+	console.log(route);
 	SEO({
 		title: "Desarrollo personal",
 		description:
@@ -29,7 +30,7 @@ const Home = () => {
 					<Slide
 						img={Confort}
 						title="¿Cómo salir de tu zona de confort?"
-						link="/desarrollo-personal/como-salir-de-tu-zona-de-confort"
+						link={`/${route}/como-salir-de-tu-zona-de-confort`}
 					>
 						La zona de confort o zona de comodidad nos sitúa en una burbuja que nos protege de lo
 						desconocido e inusual. Y sigues haciéndolo por miedo a perder tu estabilidad. La zona de
@@ -40,7 +41,7 @@ const Home = () => {
 					<Slide
 						img={Passion}
 						title="¿Cómo encontrar la pasión de tu vida?"
-						link="/desarrollo-personal/como-encontrar-la-pasion-de-tu-vida"
+						link={`/${route}/como-encontrar-la-pasion-de-tu-vida`}
 					>
 						La pasión es una de las emociones más intensas que podemos sentir en nuetras vidas, ella
 						constituye el alma de nuestro propio éxito, eso que nos motiva a hacer algo, la pasión
@@ -50,7 +51,7 @@ const Home = () => {
 					<Slide
 						img={Motivation}
 						title="¿Cómo tener más motivación en tu vida?"
-						link="/desarrollo-personal/como-salir-de-tu-zona-de-confort"
+						link={`/${route}/como-tener-mas-motivacion-en-tu-vida`}
 					>
 						La motivación es eso que te mueve a seguir adelante, son esos motivos que te impulsan a
 						completar tus objetivos, alcanzar tus metas, hacer realidad tus sueños. La motivación es
@@ -70,8 +71,8 @@ const Home = () => {
 				</p>
 				<p>
 					También permite mejorar la perspectiva con la que vemos nuestras vidas y trabajos, mejorar
-					nuestras vidas, las relaciones personales, nuestro autoconocimiento y las poder alcanzar
-					tus metas, aspiraciones y sueños.
+					nuestras vidas, las relaciones personales, nuestro autoconocimiento y poder alcanzar tus
+					metas, aspiraciones y sueños.
 				</p>
 				<p>
 					Existen muchos beneficios que irás adquiriendo al sumergirte en este tema y también un sin

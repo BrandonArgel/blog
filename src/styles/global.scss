@@ -15,6 +15,7 @@ html {
 		background-color: $body-bg;
 		color: $light-text-color;
 		font-family: $mono;
+		max-height: 100vh;
 
 		a {
 			text-decoration: none;

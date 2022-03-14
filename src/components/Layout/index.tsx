@@ -1,30 +1,46 @@
 import * as React from "react";
 import { Outlet } from "react-router-dom";
 
+import Aside from "components/Aside";
+import Footer from "components/Footer";
 import Header from "components/Header";
+import Progress from "components/Progress";
 
 import styles from "./index.module.scss";
 
-const Layout: React.FC = () => {
+const LandingLayout = () => {
 	return (
 		<>
 			<Header />
-			<div className={styles.home}>
+			<main className={styles.main}>
 				<Outlet />
-			</div>
+			</main>
 		</>
 	);
 };
 
-const PostLayout: React.FC = () => {
+interface Module {
+	name: string;
+	route: string;
+}
+
+interface Props {
+	module: Module;
+	topics: Array<string>;
+}
+
+const PostLayout: React.FC<Props> = ({ module, topics }) => {
 	return (
 		<>
 			<Header />
-			<div className={styles.post}>
+			<Aside topics={topics} module={module} />
+			<main className={`${styles.main} ${styles.post}`}>
 				<Outlet />
-			</div>
+				<Progress />
+				<Footer />
+			</main>
 		</>
 	);
 };
 
-export { Layout, PostLayout };
+export { LandingLayout, PostLayout };
