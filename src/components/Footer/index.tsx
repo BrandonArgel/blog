@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 
-import Social from "utils/social";
+import { Social } from "config";
 
 const Footer = () => {
 	return (

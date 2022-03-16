@@ -1,6 +1,21 @@
 import { GitHub, Instagram, Linkedin, Mail, Platzi, Twitter, Portfolio } from "assets/icons/social";
 
-const Social = [
+export const NavItems = [
+	{
+		name: "Desarrollo Personal",
+		url: "/desarrollo-personal",
+	},
+	{
+		name: "Tecnología",
+		url: "/tecnologia",
+	},
+	{
+		name: "Salud",
+		url: "/salud",
+	},
+];
+
+export const Social = [
 	{
 		link: "https://www.instagram.com/brandargel/",
 		icon: <Instagram />,
@@ -38,4 +53,3 @@ const Social = [
 	},
 ];
 
-export default Social;

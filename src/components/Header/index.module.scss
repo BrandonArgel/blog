@@ -24,7 +24,7 @@
 		transition: color 0.2s ease-in-out;
 		white-space: nowrap;
 
-		&:hover {
+		&:hover, &:active, &:focus {
 			color: $main-color;
 		}
 
@@ -37,6 +37,8 @@
 	}
 
 	.hamburger {
+		background-color: transparent;
+		border: none;
 		cursor: pointer;
 		min-width: 3.2rem;
 		position: relative;
@@ -175,6 +177,7 @@
 	}
 
 	.menu {
+		animation: closeMenu 0.5s ease-in-out forwards;
 		background-color: $header-bg;
 		box-shadow: 0px 0px 10px $shadow-color;
 		display: flex;
@@ -184,14 +187,14 @@
 		max-width: 25rem;
 		padding: 2rem;
 		position: fixed;
-		right: -100%;
 		top: 0;
-		transition: right 0.3s ease-in-out;
+		visibility: hidden;
 		width: 100%;
 		z-index: 2;
 
 		&.open {
-			right: 0;
+			animation: openMenu 0.3s ease-in-out forwards;
+			
 		}
 	}
 
@@ -239,8 +242,9 @@
 					transition: transform 0.5s ease 0s;
 				}
 
-				&:hover {
+				&:hover, &:active, &:focus {
 					color: $main-text-color;
+					outline: none;
 
 					&:before {
 						transform-origin: left bottom;
@@ -271,5 +275,29 @@
 				}
 			}
 		}
+	}
+}
+
+@keyframes openMenu {
+	from {
+		right: -100%;
+		visibility: hidden;
+	}
+
+	to {
+		right: 0;
+		visibility: visible;
+	}
+}
+
+@keyframes closeMenu {
+	from {
+		right: 0;
+		visibility: visible;
+	}
+
+	to {
+		right: -100%;
+		visibility: hidden;
 	}
 }

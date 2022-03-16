@@ -51,6 +51,17 @@ html {
 	}
 }
 
-:focus {
+:focus-visible {
+	outline: 2px dashed $main-color;
+	outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
 	outline: none;
+	outline-offset: 0px;
+}
+
+:focus {
+	outline: 2px dashed $main-color;
+	outline-offset: 3px;
 }

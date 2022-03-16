@@ -77,6 +77,18 @@ const Passion: React.FC<Props> = ({ url }) => {
 		);
 
 		Titles.forEach((title) => observer.observe(title));
+
+		if (window.location.hash) {
+			const id = window.location.hash.substring(1);
+			setTimeout(() => {
+				const el = document.getElementById(id);
+				if (el) {
+					el.scrollIntoView();
+					el.focus();
+				}
+			}
+			, 0);
+		}
 	}, []);
 
 	return (

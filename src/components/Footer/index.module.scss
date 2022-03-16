@@ -20,7 +20,8 @@
 				width: 3rem;
 			}
 
-			&:hover {
+			&:hover, &:active, &:focus {
+				outline: none;
 				svg {
 					fill: $main-color;
 					transform: scale(1.15);

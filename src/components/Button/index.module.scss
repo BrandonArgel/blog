@@ -142,6 +142,7 @@ $button-sizes: (
 			&:hover,
 			&:active,
 			&:focus {
+				outline: none;
 				transform: scale(1.1);
 				span:nth-child(1) {
 					animation: animate1 2s linear infinite;

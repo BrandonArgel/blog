@@ -29,15 +29,24 @@
 		z-index: 1;
 
 		.button {
-			background-color: $secondary-color;
+			background-color: $stroke-color;
 			border: none;
 			cursor: pointer;
 			height: 6rem;
 			transition: all 0.3s ease-in-out;
 			width: 3.2rem;
 
-			&:hover {
+			&.active {
+				background-color: $main-text-color;
+			}
+
+			&:hover, &:active, &:focus {
 				background-color: $main-color;
+				outline: none;
+
+				svg {
+					transform: scale(1.1);
+				}
 			}
 
 			svg {
@@ -50,8 +59,9 @@
 		a {
 			background-color: $aside-bg;
 
-			&:hover {
+			&:hover, &:active, &:focus {
 				background-color: $hover-bg;
+				outline: none;
 
 				h2 {
 					color: $main-text-color;
@@ -99,7 +109,7 @@
 			transition: background-color 0.2s ease-in-out;
 			width: 100%;
 
-			&:hover {
+			&:hover, &:active, &:focus {
 				background-color: $hover-bg;
 
 				.number {
@@ -109,6 +119,13 @@
 				.name {
 					color: $main-text-color;
 				}
+			}
+
+			&:focus {
+				border-radius: 0.3rem;
+				outline: 1px solid $main-color;
+				outline-offset: 0px;
+				position: relative;
 			}
 
 			&:last-child .item {
@@ -165,7 +182,7 @@
 
 			.name {
 				align-items: center;
-				border-top: 1px solid $stroke-color;
+				border-bottom: 1px solid $stroke-color;
 				color: $light-text-color;
 				display: flex;
 				height: 6rem;

@@ -122,7 +122,6 @@
 			border: none;
 			cursor: pointer;
 			height: 50px;
-			outline: none;
 			pointer-events: all;
 			position: absolute;
 			text-align: center;
@@ -137,7 +136,8 @@
 				width: 100%;
 			}
 
-			&:hover {
+			&:hover, &:active, &:focus {
+				outline-offset: 0;
 				transform: scale(1.1);
 
 				svg {
