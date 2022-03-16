@@ -15,6 +15,7 @@ const LandingLayout = () => {
 			<main className={styles.main}>
 				<Outlet />
 			</main>
+			<Footer />
 		</>
 	);
 };

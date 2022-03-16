@@ -2,7 +2,7 @@ import * as React from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
 import { LandingLayout, PostLayout } from "components/Layout";
-import Loader from "components/loader";
+import Loader from "components/Loader";
 
 const Home = React.lazy(() => import("pages/index"));
 

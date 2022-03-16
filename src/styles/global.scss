@@ -17,6 +17,12 @@ html {
 		font-family: $mono;
 		max-height: 100vh;
 
+		#app {
+			min-height: 100vh;
+			display: flex;
+			flex-flow: column nowrap;
+		}
+
 		a {
 			text-decoration: none;
 		}
