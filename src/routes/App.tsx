@@ -1,8 +1,7 @@
 import * as React from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
-import { LandingLayout, PostLayout } from "components/Layout";
-import Loader from "components/Loader";
+import { LandingLayout, Loader, PostLayout } from "components";
 
 const Home = React.lazy(() => import("pages/index"));
 
@@ -65,8 +64,8 @@ const NoMatch = () => {
 	const navigate = useNavigate();
 
 	React.useEffect(() => {
+		alert(`La página '${window.location.pathname}' está en creación.`);
 		navigate("/");
-		alert("Esa página está en construcción");
 	});
 
 	return null;
@@ -76,6 +75,7 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<React.Suspense fallback={<Loader />}>
+				<a className="skip-to-content" href="#contenido">Saltar al contenido</a>
 				<Routes>
 					<Route path="/" element={<LandingLayout />}>
 						<Route index element={<Home />} />

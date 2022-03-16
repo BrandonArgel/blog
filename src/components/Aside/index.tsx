@@ -1,12 +1,11 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import Title from "components/Title";
+import { Title } from "components";
 
 import { ArrowRight } from "assets/icons/arrrows";
 
 import styles from "./index.module.scss";
-
 
 interface Module {
 	name: string;
@@ -23,12 +22,12 @@ const Aside: React.FC<Props> = ({ module, topics }) => {
 
 	return (
 		<>
-			<aside className={`${styles.aside} ${isOpen ? styles.open : ""}`}>
+			<aside className={`${styles.aside} ${isOpen ? styles.open : ""}`} tabIndex={-1}>
 				<header className={styles.header}>
 					<button ref={buttonRef} className={`${styles.button} ${isOpen ? styles.active : ""}`} onClick={() => setIsOpen(!isOpen)} aria-label={!isOpen ? "Abrir menú de temas" : "Cerrar menú de temas"}>
 						<ArrowRight />
 					</button>
-					<Link to={`/${module.route}`} tabIndex={isOpen ? 0 : -1}>
+					<Link to={`/${module.route}`} tabIndex={isOpen ? 0 : -1} aria-hidden={!isOpen}>
 						<Title h={2}>
 							<p>{module.name}</p>
 						</Title>

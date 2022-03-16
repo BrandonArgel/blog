@@ -1,11 +1,8 @@
-import { Slideshow, Slide } from "components/Slideshow";
-import Title from "components/Title";
-import SEO from "components/SEO";
+import { SEO, Slideshow, Slide, Title } from "components";
 
 import Banner from "assets/images/development/banner.webp";
 import Confort from "assets/images/confort/banner.webp";
-import Footer from "components/Footer";
-import Image from "components/Image";
+import { Image } from "components";
 import Passion from "assets/images/passion/banner.webp";
 import Motivation from "assets/images/motivation/banner.webp";
 
@@ -23,7 +20,7 @@ const Home: React.FC<Props> = ({ route }) => {
 	});
 
 	return (
-		<main>
+		<>
 			<Title>Desarrollo personal</Title>
 			<section>
 				<Slideshow speed={400}>
@@ -120,8 +117,7 @@ const Home: React.FC<Props> = ({ route }) => {
 					</li>
 				</ol>
 			</article>
-			<Footer />
-		</main>
+		</>
 	);
 };
 

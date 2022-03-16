@@ -1,9 +1,6 @@
 import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-import Button from "components/Button";
-import Image from "components/Image";
-import Title from "components/Title";
+import { Button, Image, Title } from "components";
 
 import Banner from "assets/images/passion/banner.webp";
 import Brainstorming from "assets/images/passion/brainstorming.webp";
@@ -116,7 +113,7 @@ const Passion: React.FC<Props> = ({ url }) => {
 			</section>
 			<section>
 				<Title h={2}>Autoconocimiento y acción</Title>
-				<Image src={Time} alt="La pasión" size="small" side="left" />
+				<Image src={Time} alt="El tiempo, nuestro bien más valioso" size="small" side="left" />
 				<p>La pasión no siempre se presenta de forma evidente en nuestras vidas.</p>
 				<p>
 					De hecho, la mayoría de personas necesitan pensar en ello durante meses e incluso años.
@@ -166,7 +163,7 @@ const Passion: React.FC<Props> = ({ url }) => {
 						</p>
 					</li>
 					<li>
-						<Image src={LovePassion} alt="Lluvia de ideas" size="super-small" side="right" />
+						<Image src={LovePassion} alt="Amar tu pasión" size="super-small" side="right" />
 						<strong>Reconoce y distingue las cosas más importantes para ti:</strong> Una vez que
 						hayas respondido estas preguntas seguramente tendrás una mejor idea del tipo de cosas
 						que ya te interesan y siempre quisiste probar. Ahora que tienes ese autoconocimiento
@@ -198,7 +195,7 @@ const Passion: React.FC<Props> = ({ url }) => {
 					<li>
 						<strong>Prueba cosas nuevas:</strong> Practica nuevos deportes, explora tu lado
 						artístico, encuentra un nuevo hobby, sal de tu{" "}
-						<Link to={`${url}/como-salir-de-tu-zona-de-confort`}>zona de confort</Link>.
+						<Link to={`/${url}/como-salir-de-tu-zona-de-confort`} target="_blank">zona de confort</Link>.
 					</li>
 					<li>
 						<strong>Investiga:</strong> Adéntrate en nuevos temas interesantes.

@@ -1,6 +1,4 @@
-import { Slideshow, Slide } from "components/Slideshow";
-import SEO from "components/SEO";
-import Title from "components/Title";
+import { SEO, Slideshow, Slide, Title } from "components";
 
 import Confort from "assets/images/confort/banner.webp";
 import Passion from "assets/images/passion/banner.webp";

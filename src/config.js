@@ -19,37 +19,37 @@ export const Social = [
 	{
 		link: "https://www.instagram.com/brandargel/",
 		icon: <Instagram />,
-		title: "Instagram",
+		title: "Instagram de Brandon Argel",
 	},
 	{
 		link: "https://brandonargel.me",
 		icon: <Portfolio />,
-		title: "Portfolio",
+		title: "Portfolio de Brandon Argel",
 	},
 	{
 		link: "https://platzi.com/p/BrandArgel/",
 		icon: <Platzi />,
-		title: "Platzi",
+		title: "Perfil de Platzi de Brandon Argel",
 	},
 	{
 		link: "https://github.com/BrandonArgel",
 		icon: <GitHub />,
-		title: "GitHub",
+		title: "GitHub de Brandon Argel",
 	},
 	{
 		link: "https://www.linkedin.com/in/brandargel/",
 		icon: <Linkedin />,
-		title: "Linkedin",
+		title: "Linkedin de Brandon Argel",
 	},
 	{
 		link: "https://twitter.com/BrandonArgelVD",
 		icon: <Twitter />,
-		title: "Twitter",
+		title: "Twitter de Brandon Argel",
 	},
 	{
 		link: "mailto:brandargel@gmail.com",
 		icon: <Mail />,
-		title: "Email",
+		title: "Email de Brandon Argel",
 	},
 ];
 

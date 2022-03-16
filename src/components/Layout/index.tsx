@@ -1,10 +1,7 @@
 import * as React from "react";
 import { Outlet } from "react-router-dom";
 
-import Aside from "components/Aside";
-import Footer from "components/Footer";
-import Header from "components/Header";
-import Progress from "components/Progress";
+import { Aside, Footer, Header, Progress } from "components";
 
 import styles from "./index.module.scss";
 
@@ -12,10 +9,10 @@ const LandingLayout = () => {
 	return (
 		<>
 			<Header />
-			<main className={styles.main}>
+			<main id="contenido" className={styles.main} tabIndex={-1}>
 				<Outlet />
+				<Footer />
 			</main>
-			<Footer />
 		</>
 	);
 };
@@ -35,7 +32,7 @@ const PostLayout: React.FC<Props> = ({ module, topics }) => {
 		<>
 			<Header />
 			<Aside topics={topics} module={module} />
-			<main className={`${styles.main} ${styles.post}`}>
+			<main id="contenido" className={`${styles.main} ${styles.post}`} tabIndex={-1}>
 				<Outlet />
 				<Progress />
 				<Footer />

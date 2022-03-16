@@ -2,8 +2,14 @@
 
 .main {
 	margin-block-start: 6rem;
+	max-height: calc(100vh - 6rem);
 
 	&:not(.post) {
+		display: flex;
+		flex-flow: column nowrap;
+		max-height: calc(100vh - 6rem);
+		min-height: calc(100vh - 6rem);
+
 		section {
 			padding: 1rem;
 		}
@@ -135,7 +141,11 @@
 			color: transparent;
 			background-clip: text;
 			background-size: 500%;
-			animation: color 5s linear infinite;
+
+			&:hover, &:active, &:focus {
+				outline: none;
+				animation: color 5s linear infinite;
+		}
 		}
 	}
 }

@@ -15,20 +15,39 @@ html {
 		background-color: $body-bg;
 		color: $light-text-color;
 		font-family: $mono;
-		max-height: 100vh;
 
-		#app {
-			min-height: 100vh;
-			display: flex;
-			flex-flow: column nowrap;
+		.skip-to-content {
+			background-color: $main-color;
+			border-radius: 0.5rem;
+			color: $dark-text-color;
+			cursor: pointer;
+			font: $fz-md $mono;
+			height: 1px;
+			left: -999px;
+			outline: none;
+			overflow: hidden;
+			padding: 1rem 2rem;
+			position: absolute;
+			top: auto;
+			transition: all 0.3s ease-in-out;
+			width: 1px;
+			z-index: -1;
+			
+			&:focus,
+			&:active {
+				top: 0;
+				left: 0;
+				width: auto;
+				height: auto;
+				overflow: auto;
+				z-index: 5;
+			}
 		}
 
 		a {
 			text-decoration: none;
-		}
-
-		main {
-			max-height: calc(100vh - 6rem);
+			text-decoration-skip-ink: auto;
+			scroll-margin-top: 8rem;
 		}
 
 		main,

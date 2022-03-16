@@ -1,10 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button from "components/Button";
-import Image from "components/Image";
-import Information from "components/Information";
-import Title from "components/Title";
+import { Button, Image, Information, Title } from "components";
 
 import Banner from "assets/images/confort/banner.webp";
 import Unknown from "assets/images/confort/unknown.webp";
@@ -20,6 +17,7 @@ interface Props {
 }
 
 const Confort: React.FC<Props> = ({ url }) => {
+	console.log(url);
 	const navigate = useNavigate();
 
 	React.useEffect(() => {
@@ -85,8 +83,11 @@ const Confort: React.FC<Props> = ({ url }) => {
 			setTimeout(() => {
 				const el = document.getElementById(id);
 				if (el) {
-					el.scrollIntoView();
-					el.focus();
+					el.scrollIntoView(true);
+					// Main.scrollTo({
+					// 	top: el.offsetTop,
+					// 	behavior: "smooth",
+					// });
 				}
 			}
 			, 0);
@@ -148,7 +149,7 @@ const Confort: React.FC<Props> = ({ url }) => {
 					en otros animales, esto ayudó a que no nos extinguieramos hace muchos años como otras
 					especies.
 				</p>
-				<Image src={LowResistance} alt="Miedo a lo desconocido" size="medium" side="right" />
+				<Image src={LowResistance} alt="El camino de menor resistencia" size="medium" side="right" />
 				<p>
 					<span>El camino de menor resistencia:</span> Este punto no es de historia, mas bien es de
 					evolución, los humanos se han ido adaptando para siempre tomar el camino de menor

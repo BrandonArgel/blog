@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import Title from "components/Title";
+import { Title } from "components";
 import { ArrowLeft, ArrowRight } from "assets/icons/arrrows";
 import clickHandler from "utils/clickHandler";
 import styles from "./index.module.scss";
@@ -49,16 +49,16 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.slideshow} ref={slideshow}>
-				{children}
-			</div>
 			<div className={styles.controls}>
-				<button className={styles.prev} onClick={prev} aria-label="Anterior">
+				<button type="button" className={styles.prev} onClick={prev} aria-label="Anterior">
 					<ArrowLeft />
 				</button>
-				<button className={styles.next} onClick={next} aria-label="Siguiente">
+				<button type="button" className={styles.next} onClick={next} aria-label="Siguiente">
 					<ArrowRight />
 				</button>
+			</div>
+			<div className={styles.slideshow} ref={slideshow}>
+				{children}
 			</div>
 		</div>
 	);
@@ -72,6 +72,7 @@ interface SlideProps {
 }
 
 const Slide = ({ children, img, title, link }: SlideProps) => {
+	// const isTouch = navigator.userAgentData.mobile
 	const isTouch = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	const click = clickHandler(clickCallback, doubleClickCallback);
 	const navigate = useNavigate();
@@ -90,7 +91,7 @@ const Slide = ({ children, img, title, link }: SlideProps) => {
 
 	return (
 		<div className={styles.slide}>
-			<button className={styles.content} onClick={isTouch ? click : clickCallback} aria-label="Ir al post">
+			<button className={styles.content} onClick={isTouch ? click : clickCallback} aria-label={`Ir al post: ${title}`}>
 				<img src={img} alt={title} loading="lazy" />
 				<div className={styles.description}>
 					<Title h={2}>{title}</Title>
