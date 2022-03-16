@@ -10,10 +10,21 @@ interface SlideshowProps {
 	speed?: number;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {	
 	const slideshow = React.useRef<HTMLInputElement>(
 		null
 	) as React.MutableRefObject<HTMLInputElement>;
+
+	const updateVisibleSlides = React.useCallback(() => {
+		const slides = Array.from(slideshow.current.children);
+		const viewportWidth = window.innerWidth;
+		const visibleSlides = viewportWidth < 768 ? 1 : viewportWidth < 1024 ? 2 : 3;
+		slides.forEach((slide, i) => {
+			const child = slide.children[0] as HTMLElement;
+			i + 1 <= visibleSlides ? child.setAttribute("tabindex", "0") : child.setAttribute("tabindex", "-1");
+			i + 1 <= visibleSlides ? child.setAttribute("aria-hidden", "false") : child.setAttribute("aria-hidden", "true");
+		});
+	}, []);
 
 	const next = () => {
 		if (slideshow.current?.children.length > 0) {
@@ -27,6 +38,8 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 				slideshow.current.style.transition = "none";
 				slideshow.current.style.transform = `translateX(0)`;
 				slideshow.current.appendChild(firstElement);
+
+				updateVisibleSlides();
 			}, speed);
 		}
 	};
@@ -45,7 +58,13 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 				slideshow.current.style.transform = `translateX(0)`;
 			}, 0);
 		}
+
+		updateVisibleSlides();
 	};
+
+	React.useEffect(() => {
+		updateVisibleSlides();
+	}, [updateVisibleSlides]);
 
 	return (
 		<div className={styles.container}>

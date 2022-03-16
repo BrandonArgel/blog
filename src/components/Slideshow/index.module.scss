@@ -25,7 +25,8 @@
 				transition: 0.3s ease all;
 
 				&:hover,
-				&:active {
+				&:active,
+				&:focus {
 					img {
 						filter: brightness(0.5);
 					}

@@ -48,6 +48,17 @@ const Home = () => {
 						las fuerzas biológicas, emocionales, sociales y cognitivas que activan el
 						comportamiento. Es la fuerza impulsora detrás de las acciones humanas.
 					</Slide>
+					<Slide
+						img={Motivation}
+						title="¿Cómo tener más motivación en tu vida?"
+						link="/desarrollo-personal/como-tener-mas-motivacion-en-tu-vida"
+					>
+						La motivación es eso que te mueve a seguir adelante, son esos motivos que te impulsan a
+						completar tus objetivos, alcanzar tus metas, hacer realidad tus sueños. La motivación es
+						esa chispa inicial que impulsa a desear algo y a conseguirlo. La motivación involucra
+						las fuerzas biológicas, emocionales, sociales y cognitivas que activan el
+						comportamiento. Es la fuerza impulsora detrás de las acciones humanas.
+					</Slide>
 				</Slideshow>
 			</section>
 		</>
