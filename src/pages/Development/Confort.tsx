@@ -17,7 +17,6 @@ interface Props {
 }
 
 const Confort: React.FC<Props> = ({ url }) => {
-	console.log(url);
 	const navigate = useNavigate();
 
 	React.useEffect(() => {
@@ -83,11 +82,8 @@ const Confort: React.FC<Props> = ({ url }) => {
 			setTimeout(() => {
 				const el = document.getElementById(id);
 				if (el) {
-					el.scrollIntoView(true);
-					// Main.scrollTo({
-					// 	top: el.offsetTop,
-					// 	behavior: "smooth",
-					// });
+					// el.scrollIntoView(true);
+					Main.scrollTo(0, el.offsetTop - 60);
 				}
 			}
 			, 0);

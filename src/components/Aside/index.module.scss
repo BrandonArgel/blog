@@ -29,7 +29,7 @@
 		z-index: 1;
 
 		.button {
-			background-color: $stroke-color;
+			background-color: $secondary-color;
 			border: none;
 			cursor: pointer;
 			height: 6rem;
@@ -119,13 +119,6 @@
 				.name {
 					color: $main-text-color;
 				}
-			}
-
-			&:focus {
-				border-radius: 0.3rem;
-				outline: 1px solid $main-color;
-				outline-offset: 0px;
-				position: relative;
 			}
 
 			&:last-child .item {

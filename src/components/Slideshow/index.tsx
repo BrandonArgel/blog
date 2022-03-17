@@ -10,7 +10,7 @@ interface SlideshowProps {
 	speed?: number;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {	
+const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 	const slideshow = React.useRef<HTMLInputElement>(
 		null
 	) as React.MutableRefObject<HTMLInputElement>;
@@ -20,9 +20,14 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 		const viewportWidth = window.innerWidth;
 		const visibleSlides = viewportWidth < 768 ? 1 : viewportWidth < 1024 ? 2 : 3;
 		slides.forEach((slide, i) => {
+			// console.log({visibleSlides, i: i+1})
 			const child = slide.children[0] as HTMLElement;
-			i + 1 <= visibleSlides ? child.setAttribute("tabindex", "0") : child.setAttribute("tabindex", "-1");
-			i + 1 <= visibleSlides ? child.setAttribute("aria-hidden", "false") : child.setAttribute("aria-hidden", "true");
+			i + 1 <= visibleSlides
+				? child.removeAttribute("tabindex")
+				: child.setAttribute("tabindex", "-1");
+			i + 1 <= visibleSlides
+				? slide.removeAttribute("aria-hidden")
+				: slide.setAttribute("aria-hidden", "true");
 		});
 	}, []);
 
@@ -47,10 +52,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 	const prev = () => {
 		if (slideshow.current.children.length > 0) {
 			const index = slideshow.current.children.length - 1;
-			const ultimoElemento = slideshow.current.children[index];
-			const widthSlide = ultimoElemento.clientWidth;
+			const lastElement = slideshow.current.children[index];
+			const widthSlide = lastElement.clientWidth;
 			slideshow.current.style.transition = "none";
-			slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild);
+			slideshow.current.insertBefore(lastElement, slideshow.current.firstChild);
 			slideshow.current.style.transform = `translateX(-${widthSlide}px)`;
 
 			setTimeout(() => {
@@ -69,10 +74,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.controls}>
-				<button type="button" className={styles.prev} onClick={prev} aria-label="Anterior">
+				<button type="button" className={styles.prev} onClick={prev} aria-label="Anterior Post">
 					<ArrowLeft />
 				</button>
-				<button type="button" className={styles.next} onClick={next} aria-label="Siguiente">
+				<button type="button" className={styles.next} onClick={next} aria-label="Siguiente Post">
 					<ArrowRight />
 				</button>
 			</div>
@@ -92,7 +97,9 @@ interface SlideProps {
 
 const Slide = ({ children, img, title, link }: SlideProps) => {
 	// const isTouch = navigator.userAgentData.mobile
-	const isTouch = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	const isTouch = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+		navigator.userAgent
+	);
 	const click = clickHandler(clickCallback, doubleClickCallback);
 	const navigate = useNavigate();
 
@@ -110,7 +117,13 @@ const Slide = ({ children, img, title, link }: SlideProps) => {
 
 	return (
 		<div className={styles.slide}>
-			<button className={styles.content} onClick={isTouch ? click : clickCallback} aria-label={`Ir al post: ${title}`}>
+			<button
+				className={styles.content}
+				onClick={isTouch ? click : clickCallback}
+				aria-label={
+					isTouch ? `Doble click para ir al post de ${title}` : `Clic para ir al post de ${title}`
+				}
+			>
 				<img src={img} alt={title} loading="lazy" />
 				<div className={styles.description}>
 					<Title h={2}>{title}</Title>
