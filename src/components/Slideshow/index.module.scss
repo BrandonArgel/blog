@@ -9,10 +9,12 @@
 	.slideshow {
 		display: flex;
 		flex-wrap: nowrap;
+		will-change: transform, transition;
 
 		.slide {
 			display: flex;
 			justify-content: center;
+			min-height: 16rem;
 			min-width: 100%;
 			padding: 1rem;
 
@@ -21,6 +23,7 @@
 				border: none;
 				border-radius: 1rem;
 				cursor: pointer;
+				min-width: inherit;
 				position: relative;
 				transition: 0.3s ease all;
 
@@ -31,78 +34,86 @@
 						filter: brightness(0.5);
 					}
 
-					.description {
-						justify-content: center;
-						background: linear-gradient(
-							0deg,
-							rgba(0, 0, 0, 0.5) 10%,
-							rgba(0, 0, 0, 0.2) 15%,
-							rgba(0, 0, 0, 0) 90%
-						);
-
-						h2 {
-							color: $main-text-color;
-						}
-
-						p {
-							height: initial;
-						}
+					& > h2 {
+						opacity: 0;
 					}
+
+					.description {
+						transform: scaleY(1);
+					}
+				}
+
+				img {
+					border-radius: 1rem;
+					height: 100%;
+					object-fit: cover;
+					transition: all 0.3s ease;
+					vertical-align: top;
+					width: 100%;
+					will-change: filter;
+				}
+
+				& > h2 {
+					background: linear-gradient(
+						0deg,
+						rgba(0, 0, 0, 0.9) 10%,
+						rgba(0, 0, 0, 0.7) 30%,
+						rgba(0, 0, 0, 0.4) 60%,
+						rgba(0, 0, 0, 0) 100%,
+					);
+					bottom: 0;
+					color: $light-text-color;
+					font-size: $fz-lg;
+					padding: 1rem;
+					position: absolute;
+					text-shadow: 0px 0px 10px $shadow-color;
+					width: 100%;
+					will-change: color;
 				}
 			}
 
-			img {
-				border-radius: 1rem;
-				height: 100%;
-				object-fit: cover;
-				transition: all 0.3s ease;
-				vertical-align: top;
-				width: 100%;
-			}
-
 			.description {
-				align-items: center;
-				background: linear-gradient(
-					0deg,
-					rgba(0, 0, 0, 0.9) 10%,
-					rgba(0, 0, 0, 0.7) 15%,
-					rgba(0, 0, 0, 0) 90%
-				);
 				bottom: 0;
 				color: $light-text-color;
 				display: flex;
 				flex-flow: column nowrap;
 				height: 100%;
-				justify-content: flex-end;
 				left: 0;
+				justify-content: center;
 				padding: 1rem;
 				position: absolute;
-				transition: all 0.5s ease;
+				transform: scaleY(0);
+				transition: all 0.3s ease;
 
 				h2 {
-					color: $light-text-color;
+					bottom: 0;
+					color: $main-text-color;
 					font-size: $fz-lg;
 					padding: 0;
 					text-shadow: 0px 0px 10px $shadow-color;
 					transition: all 0.5s ease;
+					will-change: color;
+				}
+
+				p:first-of-type {
+					margin: 0.5rem 0;
 				}
 
 				p {
 					display: -webkit-box;
 					font: $fz-md $mono;
-					height: 0;
 					padding: 0 1rem;
 					text-shadow: 0px 0px 10px $shadow-color;
 					text-overflow: ellipsis;
 					transition: all 0.5s ease;
-					-webkit-line-clamp: 2;
+					-webkit-line-clamp: 3;
 					-webkit-box-orient: vertical;
 					overflow: hidden;
+					will-change: transform;
 				}
 
-				.mobile {
+				.info {
 					color: $main-text-color;
-					margin-top: 1rem;
 				}
 			}
 		}
@@ -116,7 +127,6 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		z-index: 1;
 
 		button {
 			background: none;
@@ -165,12 +175,14 @@
 
 @media screen and (min-width: 768px) {
 	.container .slideshow .slide {
+		min-height: 23.5rem;
 		min-width: 50%;
 	}
 }
 
 @media (min-width: 1024px) {
 	.container .slideshow .slide {
+		min-height: 21.5rem;
 		min-width: 33.33%;
 	}
 }

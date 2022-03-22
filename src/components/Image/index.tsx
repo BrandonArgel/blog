@@ -10,15 +10,16 @@ type ImageProps = {
 	alt: string;
 	size: Size;
 	side?: Side;
+	lazy?: boolean;
 };
 
-const Image: React.FC<ImageProps> = ({ src, alt, size = "large", side }) => {
+const Image: React.FC<ImageProps> = ({ src, alt, size = "large", side, lazy = true }) => {
 	return (
 		<img
 			className={`${styles.image} ${styles[size]} ${side ? styles[side] : ""}`}
 			src={src}
 			alt={alt}
-			loading="lazy"
+			loading={lazy ? "lazy" : undefined}
 		/>
 	);
 };

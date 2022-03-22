@@ -12,10 +12,25 @@
 	transition: all 0.3s ease-in-out;
 	top: 6rem;
 	width: 3.2rem;
+	will-change: width, scrollbar-width;
 	z-index: 3;
 
 	&::-webkit-scrollbar {
 		display: none;
+		will-change: display;
+	}
+
+	&.open {
+		width: 25rem;
+		scrollbar-width: initial;
+
+		&::-webkit-scrollbar {
+			display: initial;
+		}
+
+		.header .button svg {
+			transform: rotate(180deg);
+		}
 	}
 
 	.header {
@@ -53,6 +68,7 @@
 				fill: $aside-bg;
 				height: 3.2rem;
 				width: 100%;
+				will-change: transform;
 			}
 		}
 
@@ -86,19 +102,6 @@
 					overflow: hidden;
 				}
 			}
-		}
-	}
-
-	&.open {
-		width: 25rem;
-		scrollbar-width: initial;
-
-		&::-webkit-scrollbar {
-			display: initial;
-		}
-
-		.header .button svg {
-			transform: rotate(180deg);
 		}
 	}
 

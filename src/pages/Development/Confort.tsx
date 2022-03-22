@@ -82,8 +82,8 @@ const Confort: React.FC<Props> = ({ url }) => {
 			setTimeout(() => {
 				const el = document.getElementById(id);
 				if (el) {
-					// el.scrollIntoView(true);
-					Main.scrollTo(0, el.offsetTop - 60);
+					el.scrollIntoView();
+					// Main.scrollTo(0, el.offsetTop - 60);
 				}
 			}
 			, 0);
@@ -94,7 +94,7 @@ const Confort: React.FC<Props> = ({ url }) => {
 		<article>
 			<section>
 				<Title>¿Qué es la zona de confort?</Title>
-				<Image src={Banner} alt="Zona de confort" size="large" />
+				<Image src={Banner} alt="Zona de confort" size="large" lazy={false} />
 				<p>
 					Para comenzar debemos de entender <strong>¿Qué es la zona de confort?</strong> también
 					conocida como <strong>zona de comodidad</strong> y algunos puntos importantes. Si no

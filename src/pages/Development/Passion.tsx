@@ -81,7 +81,6 @@ const Passion: React.FC<Props> = ({ url }) => {
 				const el = document.getElementById(id);
 				if (el) {
 					el.scrollIntoView();
-					el.focus();
 				}
 			}
 			, 0);
@@ -92,7 +91,7 @@ const Passion: React.FC<Props> = ({ url }) => {
 		<article>
 			<section>
 				<Title>¿Cómo encontrar la pasión de tu vida?</Title>
-				<Image src={Banner} alt="La pasión" size="large" />
+				<Image src={Banner} alt="La pasión" size="large" lazy={false} />
 				<p>
 					Seguramente si eres como yo te habrás preguntado{" "}
 					<strong>¿Cuál es la pasión de mi vida?</strong> Y es que yo por mucho tiempo me había

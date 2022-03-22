@@ -6,21 +6,33 @@ $image-sizes: (
 		"smartphone": 100%,
 		"tablet": 33%,
 		"desktop": 25%,
+		// "height-smartphone": 12rem,
+		// "height-tablet": 14rem,
+		// "height-desktop": 14rem
 	),
 	"small": (
 		"smartphone": 100%,
 		"tablet": 50%,
 		"desktop": 33%,
+		// "height-smartphone": 12rem,
+		// "height-tablet": 18rem,
+		// "height-desktop": 18rem
 	),
 	"medium": (
 		"smartphone": 100%,
 		"tablet": 50%,
 		"desktop": 50%,
+		// "height-smartphone": 12rem,
+		// "height-tablet": 20rem,
+		// "height-desktop": 25rem
 	),
 	"large": (
 		"smartphone": 100%,
 		"tablet": 100%,
 		"desktop": 100%,
+		// "height-smartphone": 12rem,
+		// "height-tablet": 40rem,
+		// "height-desktop": 50rem,
 	),
 );
 
@@ -43,15 +55,24 @@ $image-sides: (
 	.#{$image-type} {
 		$devices: map-get($image-sizes, $image-type);
 
+		height: auto;
+		object-fit: cover;
+
 		@media screen and (max-width: 767px) {
+			// min-height: map-get($devices, "height-smartphone");
+			min-width: map-get($devices, "smartphone");
 			width: map-get($devices, "smartphone");
 		}
 
 		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			// min-height: map-get($devices, "height-tablet");
+			min-width: map-get($devices, "tablet");
 			width: map-get($devices, "tablet");
 		}
 
 		@media screen and (min-width: 1024px) {
+			// min-height: map-get($devices, "height-desktop");
+			min-width: map-get($devices, "desktop");
 			width: map-get($devices, "desktop");
 		}
 	}

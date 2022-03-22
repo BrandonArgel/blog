@@ -33,55 +33,54 @@
 
 		section {
 			margin-bottom: 2rem;
-		}
-
-		h1,
-		h2 {
-			background-color: $body-bg;
-			padding: 2rem 0;
-			position: sticky;
-			top: 0;
-			z-index: 1;
-		}
-
-		h1 {
-			font-size: clamp(2rem, 3.33vw, 4rem);
-		}
-
-		h2 {
-			font-size: clamp($fz-lg, 3vw, 3.8rem);
-		}
-
-		p {
-			color: $light-text-color;
-			letter-spacing: 0.1rem;
-			padding-bottom: 2rem;
-		}
-
-		strong {
-			color: $main-text-color;
-			font: $fz-md $mono;
-		}
-
-		span {
-			color: $red-color;
-			font: $fz-md $mono;
-		}
-
-		blockquote {
-			border-radius: 1rem;
-			border-bottom-left-radius: 0;
-			border-top-left-radius: 0;
-			border: 1px solid $stroke-bloquote;
-			background-color: $body-bg;
-			box-shadow: -4px 0 0 $main-text-color;
-			font: oblique lighter $fz-md $mono;
-			left: 4px;
-			padding: 2rem;
-			position: relative;
-			margin: 2rem 0;
-
-			&::before {
+			
+			h1,
+			h2 {
+				background-color: $body-bg;
+				padding: 2rem 0;
+				position: sticky;
+				top: 0;
+				z-index: 1;
+			}
+			
+			h1 {
+				font-size: clamp(2rem, 3.33vw, 4rem);
+			}
+			
+			h2 {
+				font-size: clamp($fz-lg, 3vw, 3.8rem);
+			}
+			
+			& > p {
+				color: $light-text-color;
+				letter-spacing: 0.1rem;
+				padding-bottom: 2rem;
+			}
+			
+			strong {
+				color: $main-text-color;
+				font: $fz-md $mono;
+			}
+			
+			span {
+				color: $red-color;
+				font: $fz-md $mono;
+			}
+			
+			blockquote {
+				border-radius: 1rem;
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+				border: 1px solid $stroke-bloquote;
+				background-color: $body-bg;
+				box-shadow: -4px 0 0 $main-text-color;
+				font: oblique lighter $fz-md $mono;
+				left: 4px;
+				padding: 2rem;
+				position: relative;
+				margin: 2rem 0;
+				
+				&::before {
 				color: $secondary-color;
 				content: "„";
 				font: bold 10rem Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -96,33 +95,33 @@
 		ul,
 		ol {
 			margin-left: 2rem;
-
+			
 			li {
 				margin-bottom: 1rem;
-
+				
 				p {
 					margin-top: 1rem;
 				}
 			}
 		}
-
+		
 		ul li::marker,
 		ol li::marker {
 			color: $main-text-color;
 		}
-
+		
 		ol {
 			list-style: decimal-leading-zero outside;
 			margin-left: 3rem;
 		}
-
+		
 		ul ul,
 		ol ol,
 		ul ol,
 		ol ul {
 			margin: 1rem 0 0 1.5rem;
 		}
-
+		
 		a {
 			background-image: linear-gradient(
 				to left,
@@ -137,15 +136,16 @@
 				red,
 				orange,
 				yellow
-			);
-			color: transparent;
-			background-clip: text;
-			background-size: 500%;
-
-			&:hover, &:active, &:focus {
-				outline: none;
-				animation: color 5s linear infinite;
-		}
+				);
+				color: transparent;
+				background-clip: text;
+				background-size: 500%;
+				
+				&:hover, &:active, &:focus {
+					outline: none;
+					animation: color 5s linear infinite;
+				}
+			}
 		}
 	}
 }

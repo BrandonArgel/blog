@@ -15,6 +15,23 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 		null
 	) as React.MutableRefObject<HTMLInputElement>;
 
+	const initialRender = React.useCallback(() => {
+		const slides = Array.from(slideshow.current.children);
+		const viewportWidth = window.innerWidth;
+		const visibleSlides = viewportWidth < 768 ? 1 : viewportWidth < 1024 ? 2 : 3;
+		slides.forEach((slide, i) => {
+			const child = slide.children[0] as HTMLElement;
+			const img = slide.children[0].children[0] as HTMLImageElement;
+			i + 1 > visibleSlides && img.setAttribute("loading", "lazy");
+			i + 1 <= visibleSlides
+				? child.removeAttribute("tabindex")
+				: child.setAttribute("tabindex", "-1");
+			i + 1 <= visibleSlides
+				? slide.removeAttribute("aria-hidden")
+				: slide.setAttribute("aria-hidden", "true");
+		});
+	}, []);
+
 	const updateVisibleSlides = React.useCallback(() => {
 		const slides = Array.from(slideshow.current.children);
 		const viewportWidth = window.innerWidth;
@@ -68,11 +85,14 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 	};
 
 	React.useEffect(() => {
-		updateVisibleSlides();
-	}, [updateVisibleSlides]);
+		initialRender();
+	}, [initialRender]);
 
 	return (
 		<div className={styles.container}>
+			<div className={styles.slideshow} ref={slideshow}>
+				{children}
+			</div>
 			<div className={styles.controls}>
 				<button type="button" className={styles.prev} onClick={prev} aria-label="Anterior Post">
 					<ArrowLeft />
@@ -80,9 +100,6 @@ const Slideshow: React.FC<SlideshowProps> = ({ children, speed = 500 }) => {
 				<button type="button" className={styles.next} onClick={next} aria-label="Siguiente Post">
 					<ArrowRight />
 				</button>
-			</div>
-			<div className={styles.slideshow} ref={slideshow}>
-				{children}
 			</div>
 		</div>
 	);
@@ -124,12 +141,13 @@ const Slide = ({ children, img, title, link }: SlideProps) => {
 					isTouch ? `Doble click para ir al post de ${title}` : `Clic para ir al post de ${title}`
 				}
 			>
-				<img src={img} alt={title} loading="lazy" />
+				<img src={img} alt={title} />
+				<Title h={2}>{title}</Title>
 				<div className={styles.description}>
 					<Title h={2}>{title}</Title>
 					<p>{children}</p>
-					<p className={styles.mobile}>
-						{isTouch ? "Toca dos veces para seguir leyendo!" : "¡Clic para seguir leyendo!"}
+					<p className={styles.info}>
+						{isTouch ? "¡Toca dos veces para seguir leyendo!" : "¡Clic para seguir leyendo!"}
 					</p>
 				</div>
 			</button>
