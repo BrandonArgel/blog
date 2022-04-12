@@ -1,15 +1,15 @@
-@import "styles/variables.scss";
+@use "styles/variables.scss";
 
 .info {
 	align-items: center;
 	border-radius: 1rem;
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0;
-	border: 1px solid $stroke-bloquote;
-	background-color: $body-bg;
-	box-shadow: -4px 0 0 $main-text-color;
+	border: 1px solid variables.$stroke-bloquote;
+	background-color: variables.$body-bg;
+	box-shadow: -4px 0 0 variables.$main-text-color;
 	display: flex;
-	font: oblique lighter $fz-md $mono;
+	font: oblique lighter variables.$fz-md variables.$font;
 	left: 4px;
 	padding: 2rem;
 	position: relative;
@@ -21,7 +21,7 @@
 	}
 
 	svg {
-		fill: $main-text-color;
+		fill: variables.$main-text-color;
 		height: 3rem;
 		margin-inline-end: 1rem;
 		min-width: 3rem;

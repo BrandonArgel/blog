@@ -1,4 +1,4 @@
-@import "styles/variables.scss";
+@use "styles/variables.scss";
 
 $title-types: "h1" "h2" "h3" "h4" "h5" "h6";
 
@@ -36,8 +36,8 @@ $title-sizes: (
 		// Get the sizes for each title type
 		$sizes: map-get($title-sizes, $type);
 
-		color: $main-text-color;
-		font: bold clamp(map-get($sizes, "min"), 7vw, map-get($sizes, "max")) $mono;
+		color: variables.$main-text-color;
+		font: bold clamp(map-get($sizes, "min"), 7vw, map-get($sizes, "max")) variables.$font;
 		text-align: center;
 		padding-block: 2rem;
 

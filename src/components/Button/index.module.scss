@@ -1,35 +1,35 @@
-@import "styles/variables.scss";
+@use "styles/variables.scss";
 
 $button-types: "primary", "secondary";
 
 $button-colors: (
 	"primary": (
 		"background": none,
-		"color": $main-text-color,
+		"color": variables.$main-text-color,
 		"hover-background": none,
-		"hover-color": $main-color,
+		"hover-color": variables.$main-color,
 	),
 	"secondary": (
-		"background": $secondary-color,
-		"color": $dark-text-color,
-		"hover-background": $main-color,
-		"hover-color": $dark-text-color,
+		"background": variables.$secondary-color,
+		"color": variables.$dark-text-color,
+		"hover-background": variables.$main-color,
+		"hover-color": variables.$dark-text-color,
 	),
 );
 
 $button-sizes: (
 	"large": (
-		"font": $fz-lg $mono,
+		"font": variables.$fz-lg variables.$font,
 		"height": 5rem,
 		"padding-inline": 3rem,
 	),
 	"medium": (
-		"font": $fz-md $mono,
+		"font": variables.$fz-md variables.$font,
 		"height": 4.5rem,
 		"padding-inline": 2.5rem,
 	),
 	"small": (
-		"font": $fz-sm $mono,
+		"font": variables.$fz-sm variables.$font,
 		"height": 4rem,
 		"padding-inline": 2rem,
 	),
@@ -82,7 +82,7 @@ $button-sizes: (
 				left: 0;
 				width: 100%;
 				height: 2px;
-				background: linear-gradient(to right, transparent, $secondary-color);
+				background: linear-gradient(to right, transparent, variables.$secondary-color);
 			}
 			span:nth-child(2) {
 				position: absolute;
@@ -91,7 +91,7 @@ $button-sizes: (
 				width: 2px;
 				height: 100%;
 				transform: translateY(-100%);
-				background: linear-gradient(to bottom, transparent, $secondary-color);
+				background: linear-gradient(to bottom, transparent, variables.$secondary-color);
 			}
 			span:nth-child(3) {
 				position: absolute;
@@ -99,7 +99,7 @@ $button-sizes: (
 				left: 0;
 				width: 100%;
 				height: 2px;
-				background: linear-gradient(to left, transparent, $secondary-color);
+				background: linear-gradient(to left, transparent, variables.$secondary-color);
 			}
 			span:nth-child(4) {
 				position: absolute;
@@ -108,7 +108,7 @@ $button-sizes: (
 				width: 2px;
 				height: 100%;
 				transform: translateY(100%);
-				background: linear-gradient(to top, transparent, $secondary-color);
+				background: linear-gradient(to top, transparent, variables.$secondary-color);
 			}
 			span:nth-child(5) {
 				position: absolute;
@@ -117,7 +117,7 @@ $button-sizes: (
 				width: 100%;
 				height: 2px;
 				transform: translateX(-100%);
-				background: linear-gradient(to right, transparent, $secondary-color);
+				background: linear-gradient(to right, transparent, variables.$secondary-color);
 			}
 			span:nth-child(6) {
 				position: absolute;
@@ -125,7 +125,7 @@ $button-sizes: (
 				right: 0;
 				width: 2px;
 				height: 100%;
-				background: linear-gradient(to bottom, transparent, $secondary-color);
+				background: linear-gradient(to bottom, transparent, variables.$secondary-color);
 			}
 			span:nth-child(7) {
 				position: absolute;
@@ -134,7 +134,7 @@ $button-sizes: (
 				width: 100%;
 				height: 2px;
 				transform: translateX(100%);
-				background: linear-gradient(to left, transparent, $secondary-color);
+				background: linear-gradient(to left, transparent, variables.$secondary-color);
 			}
 			span:nth-child(8) {
 				position: absolute;
@@ -142,7 +142,7 @@ $button-sizes: (
 				left: 0;
 				width: 2px;
 				height: 100%;
-				background: linear-gradient(to top, transparent, $secondary-color);
+				background: linear-gradient(to top, transparent, variables.$secondary-color);
 			}
 			&:hover,
 			&:active,

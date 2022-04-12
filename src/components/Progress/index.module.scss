@@ -1,4 +1,4 @@
-@import "styles/variables.scss";
+@use "styles/variables.scss";
 
 .progress {
 	background: none;
@@ -19,17 +19,17 @@
 	}
 
 	&::-webkit-progress-value {
-		background: $secondary-color;
+		background: variables.$secondary-color;
 		border-radius: 0px;
 	}
 
 	&::-moz-progress-bar {
-		background: $secondary-color;
+		background: variables.$secondary-color;
 		border-radius: 0px;
 	}
 
 	&::-moz-progress-bar {
-		background: $secondary-color;
+		background: variables.$secondary-color;
 	}
 
 	&::-webkit-progress-bar {

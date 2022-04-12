@@ -320,7 +320,7 @@ const Passion: React.FC<Props> = ({ url }) => {
 				</p>
 				<blockquote>Vive con pasión, no esperes a encontrarla.</blockquote>
 			</section>
-			<Button onClick={() => navigate(url)}>Regresar</Button>
+			<Button onClick={() => navigate(`/${url}`)}>Regresar</Button>
 		</article>
 	);
 };

@@ -14,14 +14,14 @@ html {
 	body {
 		background-color: $body-bg;
 		color: $light-text-color;
-		font-family: $mono;
+		font-family: $font;
 
 		.skip-to-content {
 			background-color: $main-color;
 			border-radius: 0.5rem;
 			color: $dark-text-color;
 			cursor: pointer;
-			font: $fz-md $mono;
+			font: $fz-md $font;
 			height: 1px;
 			left: -999px;
 			outline: none;

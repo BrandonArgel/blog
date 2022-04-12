@@ -1,12 +1,12 @@
-@import "styles/variables.scss";
+@use "styles/variables.scss";
 
 .footer {
-	background-color: $footer-bg;
+	background-color: variables.$footer-bg;
 	height: 7rem;
 	padding: 2rem;
 	margin-top: auto;
 
-	.social {
+	&__social {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-evenly;
@@ -17,15 +17,18 @@
 			svg {
 				border-radius: 50%;
 				height: 3rem;
-				fill: $light-text-color;
+				fill: variables.$light-text-color;
 				transition: all 0.2s ease-in-out;
 				width: 3rem;
+				will-change: filter, transform;
 			}
 
-			&:hover, &:active, &:focus {
+			&:hover,
+			&:active,
+			&:focus {
 				outline: none;
 				svg {
-					fill: $main-color;
+					fill: variables.$main-color;
 					transform: scale(1.15);
 				}
 			}

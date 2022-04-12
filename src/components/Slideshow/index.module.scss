@@ -1,4 +1,4 @@
-@import "styles/variables.scss";
+@use "styles/variables.scss";
 
 .container {
 	margin: 0 auto;
@@ -62,11 +62,11 @@
 						rgba(0, 0, 0, 0) 100%,
 					);
 					bottom: 0;
-					color: $light-text-color;
-					font-size: $fz-lg;
+					color: variables.$light-text-color;
+					font-size: variables.$fz-lg;
 					padding: 1rem;
 					position: absolute;
-					text-shadow: 0px 0px 10px $shadow-color;
+					text-shadow: 0px 0px 10px variables.$shadow-color;
 					width: 100%;
 					will-change: color;
 				}
@@ -74,7 +74,7 @@
 
 			.description {
 				bottom: 0;
-				color: $light-text-color;
+				color: variables.$light-text-color;
 				display: flex;
 				flex-flow: column nowrap;
 				height: 100%;
@@ -87,10 +87,10 @@
 
 				h2 {
 					bottom: 0;
-					color: $main-text-color;
-					font-size: $fz-lg;
+					color: variables.$main-text-color;
+					font-size: variables.$fz-lg;
 					padding: 0;
-					text-shadow: 0px 0px 10px $shadow-color;
+					text-shadow: 0px 0px 10px variables.$shadow-color;
 					transition: all 0.5s ease;
 					will-change: color;
 				}
@@ -101,9 +101,9 @@
 
 				p {
 					display: -webkit-box;
-					font: $fz-md $mono;
+					font: variables.$fz-md variables.$font;
 					padding: 0 1rem;
-					text-shadow: 0px 0px 10px $shadow-color;
+					text-shadow: 0px 0px 10px variables.$shadow-color;
 					text-overflow: ellipsis;
 					transition: all 0.5s ease;
 					-webkit-line-clamp: 3;
@@ -113,7 +113,7 @@
 				}
 
 				.info {
-					color: $main-text-color;
+					color: variables.$main-text-color;
 				}
 			}
 		}
@@ -141,8 +141,8 @@
 			width: 50px;
 
 			svg {
-				filter: drop-shadow(0 0 3px $shadow-color);
-				fill: $light-text-color;
+				filter: drop-shadow(0 0 3px variables.$shadow-color);
+				fill: variables.$light-text-color;
 				height: 100%;
 				transition: 0.3s ease all;
 				width: 100%;
@@ -153,8 +153,8 @@
 				transform: scale(1.1);
 
 				svg {
-					filter: drop-shadow(0 0 3px $secondary-color);
-					fill: $main-color;
+					filter: drop-shadow(0 0 3px variables.$secondary-color);
+					fill: variables.$main-color;
 				}
 			}
 
