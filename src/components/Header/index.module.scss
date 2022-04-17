@@ -12,18 +12,19 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: 4;
 
 	&__logo {
-		border-radius: 50%;
+		color: variables.$light-text-color;;
 		cursor: pointer;
+		font: bold 2.5rem variables.$font;
 		transition: transform 0.3s ease-in-out;
 		outline-offset: 5px;
 		will-change: transform;
 
 		&:hover,
 		&:focus {
-			transform: scale(1.1);
+			transform: scale(1.05);
 		}
 
 		&:active {
