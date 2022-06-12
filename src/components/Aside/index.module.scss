@@ -27,13 +27,9 @@
 		&::-webkit-scrollbar {
 			display: initial;
 		}
-
-		.header .button svg {
-			transform: rotate(180deg);
-		}
 	}
 
-	.header {
+	&__header {
 		box-shadow: 0px 0px 10px variables.$shadow-color;
 		display: grid;
 		grid-template-columns: 3.2rem 1fr;
@@ -43,7 +39,7 @@
 		top: 0;
 		z-index: 1;
 
-		.button {
+		&_button {
 			background-color: variables.$secondary-color;
 			border: none;
 			cursor: pointer;
@@ -55,7 +51,9 @@
 				background-color: variables.$main-text-color;
 			}
 
-			&:hover, &:active, &:focus {
+			&:hover,
+			&:active,
+			&:focus {
 				background-color: variables.$main-color;
 				outline: none;
 
@@ -75,7 +73,9 @@
 		a {
 			background-color: variables.$aside-bg;
 
-			&:hover, &:active, &:focus {
+			&:hover,
+			&:active,
+			&:focus {
 				background-color: variables.$hover-bg;
 				outline: none;
 
@@ -112,7 +112,9 @@
 			transition: background-color 0.2s ease-in-out;
 			width: 100%;
 
-			&:hover, &:active, &:focus {
+			&:hover,
+			&:active,
+			&:focus {
 				background-color: variables.$hover-bg;
 
 				.number {
